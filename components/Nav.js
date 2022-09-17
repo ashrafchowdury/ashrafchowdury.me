@@ -54,7 +54,7 @@ const Nav = () => {
     <nav className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1250px] h-28 md:h-32 lg:h-36 flex items-center justify-between mx-auto">
       {/********************* Logo *****************************/}
       <Link href="/">
-        <h1 className=" font-['Sacramento'] text-[26px] md:text-[36px] xl:text-4xl ml-2 font-bold">
+        <h1 className=" font-['Sacramento'] text-[26px] md:text-[36px] lg:text-5xl ml-2 font-bold cursor-pointer">
           Ashraf Chowdury
         </h1>
       </Link>

@@ -39,7 +39,7 @@ body::-webkit-scrollbar-thumb {
 }
 @layer components {
   .desktop_links span {
-    @apply dark:text-white mx-4 font-semibold;
+    @apply dark:text-white mx-4 font-semibold cursor-pointer;
   }
   .desktop_links span i {
     @apply mr-[6px];
@@ -50,9 +50,17 @@ body::-webkit-scrollbar-thumb {
   .mobile_links span i {
     @apply mr-2 text-xl;
   }
-
+  /**/
   .icon_hover {
     @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-700 cursor-pointer;
+  }
+  /**/
+  .swiper {
+    @apply w-[90%] xl:w-[1150px] h-[470px]  xl:h-[520px] flex justify-center overflow-x-auto;
+  }
+  /**/
+  .current_stack span {
+    @apply text-xs font-bold py-[6px] px-3 rounded-full bg-[#253345] text-white m-1;
   }
 }
 
@@ -62,4 +70,23 @@ body::-webkit-scrollbar-thumb {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.swiper-slide {
+  background: transparent;
+  /* border: 3px solid red; */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
