@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Links from "./Links";
 
 const Nav = () => {
   //use for change the theme
@@ -50,24 +51,61 @@ const Nav = () => {
   };
 
   return (
-    <nav className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1250px] h-20 md:h-24 lg:h-28 flex items-center justify-between mx-auto">
+    <nav className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1250px] h-28 md:h-32 lg:h-36 flex items-center justify-between mx-auto">
       {/********************* Logo *****************************/}
       <Link href="/">
-        <h1 className=" font-['Righteous'] text-2xl xl:text-4xl ml-2 font-bold">
+        <h1 className=" font-['Sacramento'] text-[26px] md:text-[36px] xl:text-4xl ml-2 font-bold">
           Ashraf Chowdury
         </h1>
       </Link>
 
-      {/*********************** Links and Mobile Menu Section***************************/}
+      {/************************ Links fo desktop ***************************/}
+      <div className=" flex items-center">
+        <section className=" flex items-center">
+          <Links style="desktop_links hidden lg:block" />
+
+          {/************************ Condition for show the theme icon ***************************/}
+          {/** if theme equal to dark then show sun icon other vise show the moon icon **/}
+          {mood == "dark" ? (
+            <span
+              title="Light Mood"
+              id="themeSun"
+              className="icon_hover lg:ml-4 py-[5px] px-[10px]"
+              onClick={() => handleLightTheme()}
+            >
+              <i className="fa-regular fa-sun text-lg md:text-xl dark:text-white"></i>
+            </span>
+          ) : (
+            <span
+              title="Dark Mood"
+              id="themeMoon"
+              className="icon_hover lg:ml-4 py-[3px] px-[8px] lg:py-[6px] lg:px-[10px]"
+              onClick={() => handleDarkTheme()}
+            >
+              <i className="fa-regular fa-moon text-lg md:text-xl dark:text-white"></i>
+            </span>
+          )}
+        </section>
+
+        {/************************ Condition for show the light menu icon or dark menu icon ***************************/}
+        {/** if theme equal to dark then show light menu icon other vise show the dark menu icon **/}
+
+        <span
+          className="icon_hover py-[4px] px-[10px] text-xl ml-2 md:ml-4 lg:hidden dark:text-white"
+          onClick={() => setmenu("block")}
+        >
+          <i className="fa-solid fa-bars"></i>
+        </span>
+      </div>
+
+      {/*********************** Mobile Menu Section***************************/}
       <section
-        className={`${menu} duration-700 fixed lg:relative left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-10 w-[90%] sm:w-[75%] md:w-[55%] lg:w-auto h-[90vh] lg:h-auto rounded-md bg-white dark:bg-[#253345] lg:bg-transparent dark:lg:bg-transparent flex flex-col`}
+        className={`${menu} duration-700 fixed lg:hidden left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-10 w-[90%] sm:w-[85%] md:w-[70%] h-[90vh] md:h-[80vh] rounded-md bg-white dark:bg-[#253345] flex flex-col`}
       >
-        {/************************ Mobile Menu Logo | hide on desktop ***************************/}
-        <div className=" w-[90%] mx-auto flex justify-between items-center mt-6">
-          <h1 className=" font-['Righteous'] text-xl ml-2 font-bold lg:hidden">
+        <div className=" w-[80%] mx-auto flex justify-between items-center mt-10">
+          <h1 className=" font-['Sacramento'] text-xl font-bold lg:hidden">
             Ashraf Chowdury
           </h1>
-
           <span className="icon_hover py-[2px] px-[9px] lg:hidden">
             <i
               className="fa-solid fa-xmark text-2xl dark:text-white"
@@ -76,63 +114,8 @@ const Nav = () => {
           </span>
         </div>
 
-        {/************************ Links ***************************/}
-        <div className="links">
-          <Link href="/">Home</Link>
-          <Link href="/">Projects</Link>
-          <Link href="#blogs">Blogs</Link>
-          <Link href="#auther">About Me</Link>
-        </div>
-        {/************************ Mobile Menu Signup Button | hide on desktop ***************************/}
+        <Links style="mobile_links w-[80%] mx-auto flex flex-col space-y-10 mt-10 dark:text-white" />
       </section>
-
-      <div className=" flex items-center">
-        {/************************ Condition for show the theme icon ***************************/}
-        {/** if theme equal to dark then show sun icon other vise show the moon icon **/}
-        {mood == "dark" ? (
-          <span
-            title="Light Mood"
-            id="themeSun"
-            className="icon_hover py-[5px] px-[10px]"
-            onClick={() => handleLightTheme()}
-          >
-            <i className="fa-regular fa-sun text-lg md:text-xl dark:text-white"></i>
-          </span>
-        ) : (
-          <span
-            title="Dark Mood"
-            id="themeMoon"
-            className="icon_hover py-[3px] px-[8px] lg:py-[6px] lg:px-[10px]"
-            onClick={() => handleDarkTheme()}
-          >
-            <i className="fa-regular fa-moon text-lg md:text-xl dark:text-white"></i>
-          </span>
-        )}
-
-        {/************************ Condition for show the light menu icon or dark menu icon ***************************/}
-        {/** if theme equal to dark then show light menu icon other vise show the dark menu icon **/}
-        {mood == "dark" ? (
-          <span
-            className="icon_hover py-[4px] px-[8px]"
-            onClick={() => setmenu("block")}
-          >
-            <img
-              src="/darkMenu.svg"
-              className=" w-[22px] md:w-[24px] py-[5px] lg:hidden"
-            />
-          </span>
-        ) : (
-          <span
-            className="icon_hover py-[4px] px-[8px]"
-            onClick={() => setmenu("block")}
-          >
-            <img
-              src="/menu.svg"
-              className=" w-[22px] md:w-[24px] py-[5px] lg:hidden"
-            />
-          </span>
-        )}
-      </div>
     </nav>
   );
 };

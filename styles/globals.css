@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb {
     @apply font-["Lexend_Deca"] scroll-smooth;
   }
   body {
-    @apply bg-[#f1f3ff] dark:bg-[#1B2430];
+    @apply bg-[#F4F6FF] dark:bg-[#1B2430];
   }
   body {
     @apply:: -webkit-scrollbar-thumb;
@@ -35,6 +35,24 @@ body::-webkit-scrollbar-thumb {
   p,
   a {
     @apply text-gray-700 dark:text-white;
+  }
+}
+@layer components {
+  .desktop_links span {
+    @apply dark:text-white mx-4 font-semibold;
+  }
+  .desktop_links span i {
+    @apply mr-[6px];
+  }
+  .mobile_links span {
+    @apply text-lg;
+  }
+  .mobile_links span i {
+    @apply mr-2 text-xl;
+  }
+
+  .icon_hover {
+    @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-700 cursor-pointer;
   }
 }
 
