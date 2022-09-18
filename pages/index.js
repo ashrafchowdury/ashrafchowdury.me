@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 import Article from "../components/Article";
+import Message from "../components/Message";
 export default function Home() {
   const name = [
     "Javascript",
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <Nav />
       {/********* Header Section ************/}
+      <Message />
       <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14">
         <p className=" text-sm md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
@@ -199,6 +201,45 @@ export default function Home() {
           );
         })}
       </section>
+
+      <footer className="w-[90%] mx-auto mt-16 mb-6">
+        <div className=" flex flex-col items-center text-center">
+          <p className="text-xl font-blod mb-5">
+            Want me building stuff for you? Hit me on Linkedin
+          </p>
+          <Button style=" py-2 px-6 text-sm">
+            <i className="fa-brands fa-linkedin-in mr-1"></i> Linkedin
+          </Button>
+        </div>
+
+        <div className=" text-center mt-8">
+          <h5 className=" text-xl font-bold">Get in touch with Me</h5>
+          <p className=" text-sm mt-2 mb-8">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
+            iste voluptatum iure.
+          </p>
+          <div className="social_links">
+            <a href="https://twitter.com/Ashraf_365" target="_blank">
+              <i className="fa-brands fa-twitter dark:text-white"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ashraf-chowdury-297301206/"
+              target="_blank"
+            >
+              <i className="fa-brands fa-linkedin dark:text-white"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/_ashrafchowdury/"
+              target="_blank"
+            >
+              <i className="fa-brands fa-instagram dark:text-white"></i>
+            </a>
+            <a href="https://github.com/ashrafchowdury" target="_blank">
+              <i className="fa-brands fa-github dark:text-white"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

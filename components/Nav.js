@@ -100,7 +100,7 @@ const Nav = () => {
 
       {/*********************** Mobile Menu Section***************************/}
       <section
-        className={`${menu} duration-700 fixed lg:hidden left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-10 w-[90%] sm:w-[85%] md:w-[70%] h-[90vh] md:h-[80vh] rounded-md bg-white dark:bg-[#253345] flex flex-col`}
+        className={`${menu} duration-700 fixed lg:hidden left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-30 w-[90%] sm:w-[85%] md:w-[70%] h-[90vh] md:h-[80vh] rounded-md bg-white dark:bg-[#253345] flex flex-col`}
       >
         <div className=" w-[80%] mx-auto flex justify-between items-center mt-10">
           <h1 className=" font-['Sacramento'] text-xl font-bold lg:hidden">

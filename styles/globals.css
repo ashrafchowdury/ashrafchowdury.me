@@ -29,7 +29,10 @@ body::-webkit-scrollbar-thumb {
   h1,
   li,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-gray-600 dark:text-white;
   }
   p,
@@ -61,6 +64,10 @@ body::-webkit-scrollbar-thumb {
   /**/
   .current_stack span {
     @apply text-xs font-bold py-[6px] px-3 rounded-full bg-[#253345] text-white m-1;
+  }
+  /**/
+  .social_links a {
+    @apply  border border-[#3792E4] py-[7px] px-[10px] rounded-full mx-2;
   }
 }
 
