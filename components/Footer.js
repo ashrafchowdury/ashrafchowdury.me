@@ -1,20 +1,46 @@
 import React, { Component } from "react";
-
+import Button from "./Button";
 export class Footer extends Component {
   render() {
     return (
       <>
-        {/********* Footer Section ************/}
-        <footer className=" w-[90%] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mb-4">
-          <div className="text-center mb-12 md:flex md:items-center md:justify-center">
-            <h3 className=" text-xl lg:text-2xl xl:text-3xl leading-8 font-bold md:mr-4">
+        <footer className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 lg:mt-28 mb-6">
+          <div className=" flex flex-col lg:flex-row lg:justify-center items-center text-center">
+            <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-blod mb-5 md:mb-7 lg:mb-0 lg:mr-3">
               Want me building stuff for you? Hit me on Linkedin
-            </h3>
-            <button className="gradiant_btn py-2 lg:py-3 px-4 lg:px-5 xl:px-6 text-sm lg:text-[16px] font-bold text-white rounded mt-5 md:mt-0">
-              My Linkedin
-            </button>
+            </p>
+            <Button style=" py-2 px-6 md:px-8 text-sm md:text-[16px] xl:text-xl font-bold">
+              <i className="fa-brands fa-linkedin-in mr-1"></i> Linkedin
+            </Button>
           </div>
-          {/********* Social Media Icons ************/}
+
+          <div className=" text-center mt-8 md:mt-10 xl:mt-16">
+            <h5 className=" text-xl md:text-2xl xl:text-3xl font-bold capitalize">Get in touch with Me</h5>
+            <p className=" text-sm md:text-[16px] xl:text-lg lg:leading-7 xl:leading-8 mt-2 lg:mt-4 mb-8 lg:mx-auto lg:w-[440px] xl:w-[480px]">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
+              iste voluptatum iure.
+            </p>
+            <div className="social_links">
+              <a href="https://twitter.com/Ashraf_365" target="_blank">
+                <i className="fa-brands fa-twitter dark:text-white"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ashraf-chowdury-297301206/"
+                target="_blank"
+              >
+                <i className="fa-brands fa-linkedin dark:text-white"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/_ashrafchowdury/"
+                target="_blank"
+              >
+                <i className="fa-brands fa-instagram dark:text-white"></i>
+              </a>
+              <a href="https://github.com/ashrafchowdury" target="_blank">
+                <i className="fa-brands fa-github dark:text-white"></i>
+              </a>
+            </div>
+          </div>
         </footer>
       </>
     );

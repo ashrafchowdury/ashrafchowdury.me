@@ -7,15 +7,17 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 //
-import { Pagination, FreeMode } from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 const Article = () => {
-  const [blog, setblog] = useState(3);
+  const [blog, setblog] = useState(5);
   const data = [1, 3, 4, 43, 12, 5, 7, 6];
   useEffect(() => {
-    if (window.innerWidth <= 1000 && window.innerWidth >= 650 ) {
+    if (window.innerWidth <= 1065 && window.innerWidth >= 780) {
+      setblog(3);
+    } else if (window.innerWidth <= 1065 && window.innerWidth >= 600) {
       setblog(2);
-    } else if (window.innerWidth <= 650) {
+    } else if (window.innerWidth <= 600) {
       setblog(1);
     } else {
       setblog(3);
@@ -25,21 +27,21 @@ const Article = () => {
   return (
     <Swiper
       slidesPerView={blog}
-      spaceBetween={30}
-      freeMode={true}
       pagination={{
-        clickable: true,
+        dynamicBullets: true,
       }}
-      modules={[FreeMode, Pagination]}
+      navigation={true}
+      modules={[Pagination, Navigation]}
       className="mySwiper"
     >
       {data?.map((value) => {
         return (
-          <SwiperSlide>
+          <section className=" w-full overflow-x-auto">
+                    <SwiperSlide>
             {({ isNext }) => (
               <>
                 {isNext ? (
-                  <div className=" w-[300px] lg:w-[350px] lg:scale-110 h-[420px] lg:h-[450px]  px-5 py-5 rounded dark:bg-[#253345]">
+                  <div className=" w-[300px] lg:w-[350px] lg:scale-110 h-[420px] lg:h-[450px]  px-5 py-5 rounded bg-white dark:bg-[#253345] mx-3">
                     <img
                       src="https://coursework.vschool.io/content/images/2017/08/react.png"
                       alt="image"
@@ -62,7 +64,7 @@ const Article = () => {
                     </Button>
                   </div>
                 ) : (
-                  <div className=" w-[300px] lg:w-[350px] scale-110 lg:scale-95 lg:opacity-80 h-[420px] lg:h-[450px]  px-5 py-5 rounded dark:bg-[#253345]">
+                  <div className=" w-[300px] lg:w-[350px] lg:scale-95 lg:opacity-80 h-[420px] lg:h-[450px]  px-5 py-5 rounded bg-white dark:bg-[#253345]">
                     <img
                       src="https://coursework.vschool.io/content/images/2017/08/react.png"
                       alt="image"
@@ -88,6 +90,8 @@ const Article = () => {
               </>
             )}
           </SwiperSlide>
+          </section>
+  
         );
       })}
     </Swiper>

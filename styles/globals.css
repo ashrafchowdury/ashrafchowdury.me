@@ -33,11 +33,11 @@ body::-webkit-scrollbar-thumb {
   h4,
   h5,
   h6 {
-    @apply text-gray-600 dark:text-white;
+    @apply text-gray-700 dark:text-white;
   }
   p,
   a {
-    @apply text-gray-700 dark:text-white;
+    @apply text-gray-800 dark:text-white;
   }
 }
 @layer components {
@@ -59,15 +59,18 @@ body::-webkit-scrollbar-thumb {
   }
   /**/
   .swiper {
-    @apply w-[90%] xl:w-[1150px] h-[470px]  xl:h-[520px] flex justify-center overflow-x-auto;
+    @apply w-[100%] overflow-x-auto lg:w-[950px] xl:w-[1180px] h-[470px]  md:h-[520px] lg:h-[580px] flex justify-center;
   }
+  /* .swiper {
+    @apply w-[95%]  h-[470px]  md:h-[520px] lg:h-[580px] flex justify-center overflow-x-auto;
+  } */
   /**/
   .current_stack span {
-    @apply text-xs font-bold py-[6px] px-3 rounded-full bg-[#253345] text-white m-1;
+    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-white dark:bg-[#253345] dark:text-white m-1 xl:m-[6px];
   }
   /**/
   .social_links a {
-    @apply  border border-[#3792E4] py-[7px] px-[10px] rounded-full mx-2;
+    @apply md:text-lg lg:text-xl py-[8px] lg:py-[10px] px-[11px] lg:px-[13px] rounded-full mx-2 xl:mx-3 bg-white dark:bg-[#253345];
   }
 }
 
@@ -81,6 +84,7 @@ body::-webkit-scrollbar-thumb {
 
 .swiper-slide {
   background: transparent;
+
   /* border: 3px solid red; */
 
   /* Center slide text vertically */
