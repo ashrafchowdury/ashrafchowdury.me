@@ -2,23 +2,26 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 
 const Article = () => {
-  const data = [1, 3, 4];
+  const data = [0, 12123, 41212];
 
   return (
-    <article className=" w-[90%] md-[700px] lg:w-[1000px] xl:w-[1250px] mx-auto flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center">
+    <article className=" w-[90%] md-[700px] lg:w-[1000px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
       {data.map((value) => {
         return (
-          <div className=" w-[300px] lg:w-[350px] h-[420px] lg:h-[450px] px-5 py-5 rounded bg-white dark:bg-[#253345] mx-3 my-4 md:my-3">
+          <div className=" w-[100%] sm:w-[85%] md:w-[320px] lg:w-[400px] mx-3 lg:mx-4 my-2 lg:my-3 py-2 overflow-hidden cursor-pointer">
             <img
               src="https://coursework.vschool.io/content/images/2017/08/react.png"
-              alt="image"
-              className=" rounded-md"
+              alt="{title}"
+              title="{title}"
+              className=" rounded w-[100%] md:w-[320px] lg:w-[400px] md:h-40 lg:h-44 object-cover duration-700 hover:scale-105"
             />
-            <div className=" text-xs dark:text-white flex justify-between items-center mt-2 mb-2">
+            <p className=" text-xs lg:text-sm flex justify-between mt-2">
               <span>React.js</span> <span>Publihed: 9/12/2022</span>
-            </div>
-            <h1 className=" text-xl">Handle React Forms With Formik</h1>
-            <p className=" text-xs leading-6 h-16 overflow-hidden break-all mt-2 mb-7">
+            </p>
+            <h1 className=" text-xl mt-2">
+              Handl React Form With Formik {value}
+            </h1>
+            <p className=" text-xs leading-6 h-16 overflow-hidden break-all mt-1 mb-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
               culpa nemo vel aperiam eos quas magnam, libero, ex possimus
               repellat, nulla illo eum dignissimos

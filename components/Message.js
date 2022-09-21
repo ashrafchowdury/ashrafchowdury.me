@@ -9,7 +9,7 @@ const Message = () => {
   return (
     <>
       {icon && (
-        <section className=" w-[80%] h-[400px] dark:bg-[#253345] rounded fixed bottom-[70px] right-8 z-20">
+        <section className=" w-[80%] sm:w-[80%] md:w-[470px] h-[450px] lg:h-[500px] bg-white dark:bg-[#253345] border dark:border-none rounded fixed bottom-[80px] lg:bottom-[105px] right-9 lg:right-[60px] z-20">
           <div className=" py-2">
             <p className=" uppercase font-bold ml-4">Compose Email</p>
           </div>
@@ -20,20 +20,25 @@ const Message = () => {
             <input
               type="email"
               value="ashraf.chowdury09@gmail.com"
-              className=" text-sm py-2 px-4 rounded-full bg-[#1B2430]  outline-none"
+              className=" text-sm lg:text-[16px] py-2 lg:py-[10px] px-4 rounded-full bg-[#F4F6FF] dark:bg-[#1B2430] border dark:border-none  outline-none"
             />
             <input
               type="email"
               placeholder="From"
-              className=" text-sm py-2 px-4 rounded-full bg-[#1B2430]  outline-none"
+              className=" text-sm lg:text-[16px] py-2 lg:py-[10px] px-4 rounded-full bg-[#F4F6FF] dark:bg-[#1B2430] border dark:border-none  outline-none"
+            />
+            <input
+              type="email"
+              placeholder="Subject"
+              className=" text-sm lg:text-[16px] py-2 lg:py-[10px] px-4 rounded-full bg-[#F4F6FF] dark:bg-[#1B2430] border dark:border-none  outline-none"
             />
             <textarea
               placeholder=" Write Message"
               name=""
               id=""
-              className=" h-40 text-sm py-3 px-4 rounded-lg bg-[#1B2430]  outline-none"
+              className=" h-40 lg:h-[200px] text-sm lg:text-[16px] py-3 px-4 rounded-lg bg-[#F4F6FF] dark:bg-[#1B2430] border dark:border-none  outline-none"
             ></textarea>
-            <Button style="py-[7px] text-sm !mt-5">
+            <Button style="py-[7px] text-sm lg:text-[16px] !mt-5">
               Submit <i className="fa-solid fa-plane ml-2"></i>
             </Button>
           </form>

@@ -10,7 +10,7 @@ const detaile = () => {
       <img
         src="https://cdn.dribbble.com/users/937198/screenshots/16179528/media/785b8fcc5b0eaf558af4fb7ea15a7a0f.png?compress=1&resize=1000x750&vertical=top"
         alt="image"
-        className="w-[90%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
+        className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
       />
 
       {/***************** Artical Section ************************/}

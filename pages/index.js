@@ -6,6 +6,8 @@ import Bio from "../components/Bio";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import Heading from "../components/Heading";
+import Tooltip from "../components/Tooltip";
+import ReactTooltip from "react-tooltip";
 export default function Home() {
   const name = [
     "Javascript",
@@ -23,6 +25,7 @@ export default function Home() {
       <Nav />
       {/********* Header Section ************/}
       <Message />
+      <ReactTooltip />
       <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14">
         <p className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
@@ -60,6 +63,7 @@ export default function Home() {
       <Heading
         title="My Coding Project"
         icon="fa-solid fa-screwdriver-wrench"
+        style="mt-12"
       />
 
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
@@ -90,7 +94,7 @@ export default function Home() {
             );
           })}
         </div>
-        <Button style=" md:py-[10px] md:px-10 block mx-auto md:mt-[60px]">
+        <Button style=" text-sm md:text-[16px] py-[7px] px-8 md:py-[10px] md:px-10 block mx-auto mt-[40px] md:mt-[60px]">
           Contact Me
         </Button>
       </section>
@@ -105,23 +109,23 @@ export default function Home() {
         i_style="font-normal"
       />
 
-      <section className=" w-full">
-        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-16 md:my-20 lg:my-24">
-          <h4 className=" text-xl md:text-2xl lg:text-3xl font-semibold md:mb-5">
+      <section className=" w-full mb-20 lg:mb-28">
+        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">
+          <h4 className=" text-[22px] md:text-2xl lg:text-3xl font-semibold mb-2 md:mb-5">
             Starting
           </h4>
-          <p className=" text-xs md:text-[16px] lg:text-lg">
+          <p className=" text-sm md:text-[16px] lg:text-lg leading-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
             nostrum est asperiores quasi error, necessitatibus dolorum,
             voluptatem nisi unde quia ipsam quidem commodi dicta eaque dolor
             maxime facilis
           </p>
         </div>
-        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-16 md:my-20 lg:my-24">
-          <h4 className=" text-xl md:text-2xl lg:text-3xl font-semibold md:mb-5">
+        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">
+          <h4 className=" text-[22px] md:text-2xl lg:text-3xl font-semibold mb-2 md:mb-5">
             Right Now
           </h4>
-          <p className=" text-xs md:text-[16px] lg:text-lg">
+          <p className=" text-sm md:text-[16px] lg:text-lg leading-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
             nostrum est asperiores quasi error, necessitatibus dolorum,
             voluptatem nisi unde quia ipsam quidem
