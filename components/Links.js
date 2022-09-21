@@ -8,17 +8,17 @@ const Links = ({ style }) => {
           <i className="fa-solid fa-house"></i> Home
         </span>
       </Link>
-      <Link href="/">
+      <Link href="/projects">
         <span>
           <i className="fa-solid fa-list-check"></i> Projects
         </span>
       </Link>
-      <Link href="/">
+      <Link href="https://ashrafchowdury09.hashnode.dev/" target="_blank">
         <span>
           <i className="fa-regular fa-newspaper"></i> Blogs
         </span>
       </Link>
-      <Link href="/">
+      <Link href="/about">
         <span>
           <i className="fa-regular fa-address-card"></i> About Me
         </span>

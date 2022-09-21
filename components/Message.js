@@ -41,7 +41,7 @@ const Message = () => {
       )}
 
       <div
-        className=" text-xl fixed bottom-5 right-5 z-20 text-white bg-[#3792E4] py-[9px] px-[13px] rounded-full"
+        className=" text-xl lg:text-2xl fixed bottom-5 lg:bottom-9 right-5 lg:right-9 z-20 text-white bg-[#3792E4] py-[9px] lg:py-[12px] px-[13px] lg:px-[17px] rounded-full cursor-pointer"
         onClick={() => (icon == false ? seticon(true) : seticon(false))}
       >
         {icon ? (

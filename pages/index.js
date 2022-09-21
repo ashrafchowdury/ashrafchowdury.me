@@ -5,6 +5,7 @@ import Message from "../components/Message";
 import Bio from "../components/Bio";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
+import Heading from "../components/Heading";
 export default function Home() {
   const name = [
     "Javascript",
@@ -44,43 +45,97 @@ export default function Home() {
         </Button>
       </header>
 
-      {/********* Blog Section ************/}
-      <h3 className=" text-lg md:text-2xl lg:text-3xl text-center font-bold mt-9 md:mt-14 mb-7 md:mb-3 lg:mb-3">
-        My Latest Article <i className="fa-solid fa-newspaper ml-2"></i>
-      </h3>
-
-      <Article />
+      <article className="w-full h-48 md:h-[250px] lg:h-[300px] my-10 bg-white dark:bg-[#253345] flex justify-center items-center">
+        <p className=" md:text-xl lg:text-2xl lg:leading-[45px] font-light text-center capitalize">
+          <span className=" text-xl md:text-2xl lg:text-3xl">“</span>
+          <span className="text-xl md:text-2xl lg:text-3xl font-medium">S</span>
+          uccess isn’t always about greatness. It’s about consistency. <br />{" "}
+          Consistent hard work leads to success. Greatness will come
+          <span className="text-xl md:text-2xl lg:text-3xl">”</span>
+        </p>
+      </article>
 
       <Bio />
 
-      <h3 className=" text-[22px] md:text-3xl lg:text-4xl font-bold uppercase text-center mt-12 xl:mt-32 mb-10 lg:mb-20 xl:mb-24">
-        My Coding Project{" "}
-        <i className="fa-solid fa-screwdriver-wrench ml-1 font-semibold"></i>
-      </h3>
+      <Heading
+        title="My Coding Project"
+        icon="fa-solid fa-screwdriver-wrench"
+      />
 
-      <Projects />
-
-      <h3 className=" text-[22px] md:text-3xl lg:text-4xl font-bold uppercase text-center mt-10 lg:mt-6 mb-7 lg:mb-12">
-        My Ecosystem{" "}
-        <i className="fa-solid fa-network-wired ml-1 font-semibold"></i>
-      </h3>
-
-      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1150px] mx-auto flex flex-wrap justify-center">
-        {name.map((value) => {
-          return (
-            <div className=" flex items-center border border-[#3792E4] py-[8px] lg:py-[10px] px-[14px] lg:px-[16px] xl:px-[20px] m-[5px] md:m-[10px] rounded">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
-                alt="image"
-                className=" w-[20px] md:w-[28px] lg:w-[32px] mr-2 lg:mr-3"
-              />
-              <p className=" text-sm md:text-[16px] lg:w-lg font-bold">
-                {value}
-              </p>
-            </div>
-          );
-        })}
+      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
+        <Projects />
+        <Projects
+          style="lg:flex-row-reverse"
+          space="lg:!ml-0 xl:!ml-0 lg:mr-5 xl:mr-8"
+        />
+        <Projects />
       </section>
+
+      <Heading title="My Ecosystem" icon="fa-solid fa-network-wired" />
+
+      <section>
+        <div className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1150px] mx-auto flex flex-wrap justify-center">
+          {name.map((value) => {
+            return (
+              <div className=" flex items-center border border-[#3792E4] py-[8px] lg:py-[10px] px-[14px] lg:px-[16px] xl:px-[20px] m-[5px] md:m-[10px] rounded">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
+                  alt="image"
+                  className=" w-[20px] md:w-[28px] lg:w-[32px] mr-2 lg:mr-3"
+                />
+                <p className=" text-sm md:text-[16px] lg:w-lg font-bold">
+                  {value}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        <Button style=" md:py-[10px] md:px-10 block mx-auto md:mt-[60px]">
+          Contact Me
+        </Button>
+      </section>
+
+      <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 lg:my-28 bg-white dark:bg-[#253345]">
+        {" "}
+      </div>
+
+      <Heading
+        title="Expreriance"
+        icon="fa-regular fa-address-book"
+        i_style="font-normal"
+      />
+
+      <section className=" w-full">
+        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-16 md:my-20 lg:my-24">
+          <h4 className=" text-xl md:text-2xl lg:text-3xl font-semibold md:mb-5">
+            Starting
+          </h4>
+          <p className=" text-xs md:text-[16px] lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            nostrum est asperiores quasi error, necessitatibus dolorum,
+            voluptatem nisi unde quia ipsam quidem commodi dicta eaque dolor
+            maxime facilis
+          </p>
+        </div>
+        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-16 md:my-20 lg:my-24">
+          <h4 className=" text-xl md:text-2xl lg:text-3xl font-semibold md:mb-5">
+            Right Now
+          </h4>
+          <p className=" text-xs md:text-[16px] lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            nostrum est asperiores quasi error, necessitatibus dolorum,
+            voluptatem nisi unde quia ipsam quidem
+          </p>
+        </div>
+      </section>
+
+      <Heading
+        title=" My Latest Article"
+        icon="fa-solid fa-newspaper"
+        i_style="font-normal"
+      />
+
+      <Article />
 
       <Footer />
     </>

@@ -57,20 +57,19 @@ body::-webkit-scrollbar-thumb {
   .icon_hover {
     @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-700 cursor-pointer;
   }
-  /**/
-  .swiper {
-    @apply w-[100%] overflow-x-auto lg:w-[950px] xl:w-[1180px] h-[470px]  md:h-[520px] lg:h-[580px] flex justify-center;
-  }
-  /* .swiper {
-    @apply w-[95%]  h-[470px]  md:h-[520px] lg:h-[580px] flex justify-center overflow-x-auto;
-  } */
-  /**/
   .current_stack span {
-    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-white dark:bg-[#253345] dark:text-white m-1 xl:m-[6px];
+    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-white dark:bg-[#253345] dark:text-white my-2 mr-2 xl:mr-[10px];
   }
   /**/
   .social_links a {
     @apply md:text-lg lg:text-xl py-[8px] lg:py-[10px] px-[11px] lg:px-[13px] rounded-full mx-2 xl:mx-3 bg-white dark:bg-[#253345];
+  }
+}
+
+/************************ This is for the Blog Detaile Page **************************/
+@layer components {
+  .blog p {
+    @apply text-sm lg:text-[18px] lg:w-[95%] rounded leading-6 lg:leading-8 my-5 break-all;
   }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../components/Nav";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Button from "../components/Button";
 
 //Error Page
 const CustomError = () => {
@@ -17,12 +18,9 @@ const CustomError = () => {
         <h1 className="gradiant_text p-3 w-full text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-10 lg:mb-16">
           404 Page Not Found
         </h1>
-        <button
-          className="gradiant_btn py-2 px-6 text-sm lg:text-lg rounded text-white font-bold"
-          onClick={() => router.back()}
-        >
+        <Button style=" py-[10px] px-12 mt-2" click={() => router.back()}>
           Go Back
-        </button>
+        </Button>
       </div>
     </>
   );
