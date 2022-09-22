@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "tooltip",
+      title: "Tooltip",
+      type: "string",
+    },
+    {
       name: "mainImage",
       title: "Main image",
       type: "image",

@@ -1,3 +1,4 @@
+import React from "react";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 import Article from "../components/Article";
@@ -8,24 +9,18 @@ import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 import Tooltip from "../components/Tooltip";
 import ReactTooltip from "react-tooltip";
-export default function Home() {
-  const name = [
-    "Javascript",
-    "React.js",
-    "Next.js",
-    "Redux",
-    "TailwindCSS",
-    "React Query",
-    "Firebase",
-    "Formik",
-    "SCSS",
-  ];
+//sanity
+import { sanityClient, urlFor } from "../sanity";
+
+export default function Home({ language, blog, author, project }) {
+  console.log(project);
+
   return (
     <>
       <Nav />
       {/********* Header Section ************/}
       <Message />
-      <ReactTooltip />
+
       <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14">
         <p className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
@@ -58,7 +53,7 @@ export default function Home() {
         </p>
       </article>
 
-      <Bio />
+      <Bio author={author} />
 
       <Heading
         title="My Coding Project"
@@ -67,28 +62,29 @@ export default function Home() {
       />
 
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
-        <Projects />
-        <Projects
-          style="lg:flex-row-reverse"
-          space="lg:!ml-0 xl:!ml-0 lg:mr-5 xl:mr-8"
-        />
-        <Projects />
+        {project?.map((value) => {
+          return (
+            <React.Fragment key={value._id}>
+              <Projects data={value} />
+            </React.Fragment>
+          );
+        })}
       </section>
 
       <Heading title="My Ecosystem" icon="fa-solid fa-network-wired" />
 
       <section>
         <div className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1150px] mx-auto flex flex-wrap justify-center">
-          {name.map((value) => {
+          {language?.map((value) => {
             return (
               <div className=" flex items-center border border-[#3792E4] py-[8px] lg:py-[10px] px-[14px] lg:px-[16px] xl:px-[20px] m-[5px] md:m-[10px] rounded">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
+                  src={urlFor(value.mainImage).url()}
                   alt="image"
                   className=" w-[20px] md:w-[28px] lg:w-[32px] mr-2 lg:mr-3"
                 />
                 <p className=" text-sm md:text-[16px] lg:w-lg font-bold">
-                  {value}
+                  {value.name}
                 </p>
               </div>
             );
@@ -139,9 +135,68 @@ export default function Home() {
         i_style="font-normal"
       />
 
-      <Article />
+      <Article data={blog} />
 
       <Footer />
     </>
   );
 }
+
+//get the blog posts with server side rendering
+export const getServerSideProps = async () => {
+  const authorQuery = `*[_type == "author"]{
+    _id,
+    title,
+    mainImage,
+    main_description,
+    github_link,
+    resume,
+    current_stack[] -> {
+      title,
+     },
+  }`;
+  //blog query
+  const blogQuery = `*[_type == "blog"]{
+    _id,
+    title,
+    link,
+    mainImage,
+    publishedAt,
+    description,
+  }`;
+
+  const languageQuery = `*[_type == "language"]{
+    name,
+    tooltip,
+    mainImage,
+  }`;
+
+  const projectQuery = `*[_type == "project"]{
+    _id,
+    title,
+    mainImage,
+    publishedAt,
+    slug,
+    description_1,
+    description_2,
+    github_link,
+    website,
+    categories[] -> {
+      title,
+     },
+  }`;
+  //call api
+  const language = await sanityClient.fetch(languageQuery);
+  const blog = await sanityClient.fetch(blogQuery);
+  const author = await sanityClient.fetch(authorQuery);
+  const project = await sanityClient.fetch(projectQuery);
+  //send the data to home page
+  return {
+    props: {
+      language,
+      blog,
+      author,
+      project,
+    },
+  };
+};

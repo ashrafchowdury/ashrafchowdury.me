@@ -7,11 +7,10 @@ import imageUrlBuilder from "@sanity/image-url";
 
 //configure the backend
 export const config = {
-  projectId: "q1zq7tcr", // you can find this in sanity.json
-  dataset: "production", // or the name you chose in step 1
+  projectId: "wiev2jo5",
+  dataset: "production",
   useCdn: true, // `false` if you want to ensure fresh data
 };
-
 
 //setup clients for fetching data in the getProps page funcion
 export const sanityClient = createClient(config);
