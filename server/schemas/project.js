@@ -12,6 +12,11 @@ export default {
       },
     },
     {
+      name: "project_id",
+      title: "Project Id",
+      type: "number",
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
@@ -56,6 +61,18 @@ export default {
       name: "website",
       title: "Website",
       type: "url",
+    },
+    {
+      name: "direction",
+      title: "Direction",
+      type: "string",
+    },
+  ],
+  orderings: [
+    {
+      name: "title",
+      title: "Title",
+      by: [{ field: "title", direction: "asc" }],
     },
   ],
 };

@@ -9,12 +9,16 @@ import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 import Tooltip from "../components/Tooltip";
 import ReactTooltip from "react-tooltip";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 //sanity
 import { sanityClient, urlFor } from "../sanity";
-
-export default function Home({ language, blog, author, project }) {
-  console.log(project);
-
+import Link from "next/link";
+// { language, blog, author, project }
+export default function Home() {
+  const { data: project } = useQuery("project", { staleTime: 500000 });
+  const { data: author } = useQuery("author", { staleTime: 500000 });
+  const { data: blog } = useQuery("blog", { staleTime: 500000 });
+  const { data: language } = useQuery("language", { staleTime: 500000 });
   return (
     <>
       <Nav />
@@ -31,6 +35,7 @@ export default function Home({ language, blog, author, project }) {
         <h2 className="gradiant_text capitalize text-[32px] sm:text-[38px] md:text-[42px] lg:text-[68px] xl:text-[80px] leading-[45px] lg:leading-[88px] xl:leading-[110px] font-bold mb-3 md:mb-5">
           I am a front-end developer.
         </h2>
+
         <p className=" text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos
           nemo expedita illo? Eveniet ipsum repudiandae doloribus unde enim
@@ -62,13 +67,15 @@ export default function Home({ language, blog, author, project }) {
       />
 
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
-        {project?.map((value) => {
-          return (
-            <React.Fragment key={value._id}>
-              <Projects data={value} />
-            </React.Fragment>
-          );
-        })}
+        {project
+          ?.filter((val) => val.project_id < 4)
+          .map((value) => {
+            return (
+              <React.Fragment key={value._id}>
+                <Projects data={value} />
+              </React.Fragment>
+            );
+          })}
       </section>
 
       <Heading title="My Ecosystem" icon="fa-solid fa-network-wired" />
@@ -143,7 +150,70 @@ export default function Home({ language, blog, author, project }) {
 }
 
 //get the blog posts with server side rendering
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async () => {
+//   const authorQuery = `*[_type == "author"]{
+//     _id,
+//     title,
+//     mainImage,
+//     main_description,
+//     github_link,
+//     resume,
+//     current_stack[] -> {
+//       title,
+//      },
+//   }`;
+
+//   //blog query
+//   const blogQuery = `*[_type == "blog"]{
+//     _id,
+//     title,
+//     link,
+//     mainImage,
+//     publishedAt,
+//     description,
+//   }`;
+
+//   const languageQuery = `*[_type == "language"]{
+//     name,
+//     tooltip,
+//     mainImage,
+//   }`;
+
+//   const projectQuery = `*[_type == "project"]{
+//     _id,
+//     title,
+//     mainImage,
+//     publishedAt,
+//     slug,
+//     description_1,
+//     description_2,
+//     github_link,
+//     website,
+//     direction,
+//     project_id,
+//     categories[] -> {
+//       title,
+//      },
+//   }`;
+//   //call api
+//   const language = await sanityClient.fetch(languageQuery);
+//   const blog = await sanityClient.fetch(blogQuery);
+//   const author = await sanityClient.fetch(authorQuery);
+//   const project = await sanityClient.fetch(projectQuery);
+
+//   //send the data to home page
+//   return {
+//     props: {
+//       language,
+//       blog,
+//       author,
+//       project,
+//     },
+//   };
+// };
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
   const authorQuery = `*[_type == "author"]{
     _id,
     title,
@@ -155,7 +225,6 @@ export const getServerSideProps = async () => {
       title,
      },
   }`;
-  //blog query
   const blogQuery = `*[_type == "blog"]{
     _id,
     title,
@@ -164,13 +233,11 @@ export const getServerSideProps = async () => {
     publishedAt,
     description,
   }`;
-
   const languageQuery = `*[_type == "language"]{
     name,
     tooltip,
     mainImage,
   }`;
-
   const projectQuery = `*[_type == "project"]{
     _id,
     title,
@@ -181,22 +248,31 @@ export const getServerSideProps = async () => {
     description_2,
     github_link,
     website,
+    direction,
+    project_id,
     categories[] -> {
       title,
      },
   }`;
-  //call api
-  const language = await sanityClient.fetch(languageQuery);
-  const blog = await sanityClient.fetch(blogQuery);
-  const author = await sanityClient.fetch(authorQuery);
-  const project = await sanityClient.fetch(projectQuery);
-  //send the data to home page
+  await queryClient.prefetchQuery("author", () => {
+    const author = sanityClient.fetch(authorQuery);
+    return author;
+  });
+  await queryClient.prefetchQuery("blog", () => {
+    const blog = sanityClient.fetch(blogQuery);
+    return blog;
+  });
+  await queryClient.prefetchQuery("language", () => {
+    const language = sanityClient.fetch(languageQuery);
+    return language;
+  });
+  await queryClient.prefetchQuery("project", () => {
+    const project = sanityClient.fetch(projectQuery);
+    return project;
+  });
   return {
     props: {
-      language,
-      blog,
-      author,
-      project,
+      dehydratedState: dehydrate(queryClient),
     },
   };
-};
+}

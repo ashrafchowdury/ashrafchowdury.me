@@ -2,7 +2,13 @@ import Nav from "../../components/Nav";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import { sanityClient, urlFor } from "../../sanity";
-const detaile = ({ post: data }) => {
+import { dehydrate, QueryClient, useQuery } from "react-query";
+
+const detaile = (dehydratedState) => {
+  // const { data } = useQuery("post", dehydratedState);
+  const { data, isError } = useQuery("post", {
+    staleTime: 500000,
+  });
 
   return (
     <>
@@ -16,8 +22,6 @@ const detaile = ({ post: data }) => {
 
       {/***************** Artical Section ************************/}
       <article className="blog w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px] mx-auto mb-16 lg:mb-24">
-        {/* publishing data and user Info */}
-
         <span className=" mt-1 md:mt-2 mb-2 lg:mb-5 text-xs md:text-sm dark:text-white block">
           {" "}
           {new Date(data.publishedAt).toLocaleString()}
@@ -84,9 +88,7 @@ export async function getStaticPaths() {
   };
 }
 
-//get the blogdata
 export async function getStaticProps({ params }) {
-  //bolg post query
   const query = `*[_type == "project" && slug.current == $slug][0]{
     _id,
     title,
@@ -101,17 +103,50 @@ export async function getStaticProps({ params }) {
       title,
      },
   }`;
+  const queryClient = new QueryClient();
 
-  //blog request || sanityClient is come from the sanity.js page
-  const post = await sanityClient.fetch(query, {
-    slug: params?.slug,
+  await queryClient.prefetchQuery("post", () => {
+    const post = sanityClient.fetch(query, {
+      slug: params?.slug,
+    });
+    return post;
   });
 
-  //send data to post page
   return {
     props: {
-      post,
+      dehydratedState: dehydrate(queryClient),
     },
-    revalidate: 60, //after 60 send it will update the old cached version
   };
 }
+
+//get the blogdata
+// export async function getStaticProps({ params }) {
+//   //bolg post query
+//   const query = `*[_type == "project" && slug.current == $slug][0]{
+//     _id,
+//     title,
+//     mainImage,
+//     publishedAt,
+//     slug,
+//     description_1,
+//     description_2,
+//     github_link,
+//     website,
+//     categories[] -> {
+//       title,
+//      },
+//   }`;
+
+//   //blog request || sanityClient is come from the sanity.js page
+//   const post = await sanityClient.fetch(query, {
+//     slug: params?.slug,
+//   });
+
+//   //send data to post page
+//   return {
+//     props: {
+//       post,
+//     },
+//     revalidate: 60, //after 60 send it will update the old cached version
+//   };
+// }
