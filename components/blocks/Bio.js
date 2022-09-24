@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./Button";
-import { urlFor } from "../sanity";
+import Button from "../utilities/Button";
+import { urlFor } from "../../sanity";
 
 const Bio = ({ author }) => {
   return (

@@ -23,6 +23,10 @@ export default function Document() {
           src="https://kit.fontawesome.com/3e892a7f39.js"
           crossorigin="anonymous"
         ></script>
+
+        {/**************** Font Awesome CDN **********/}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="shortcut icon" href="/icons/icon-96x96.png" type="image/x-icon" />
       </Head>
       <body>
         <Main />

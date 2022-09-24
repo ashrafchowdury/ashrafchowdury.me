@@ -1,8 +1,6 @@
-import React from "react";
-import Nav from "../components/Nav";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Button from "../components/Button";
+import Button from "../components/utilities/Button";
 
 //Error Page
 const CustomError = () => {
@@ -13,7 +11,7 @@ const CustomError = () => {
       <Head>
         <title>404 Page Not Found</title>
       </Head>
-      <Nav />
+
       <div className=" absolute top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] text-center">
         <h1 className="gradiant_text p-3 w-full text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-10 lg:mb-16">
           404 Page Not Found

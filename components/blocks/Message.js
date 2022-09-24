@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import Button from "../utilities/Button";
 const Message = () => {
   const [icon, seticon] = useState(false);
   //bg-[#1B2430]

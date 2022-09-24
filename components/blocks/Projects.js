@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Button from "./Button";
-import { urlFor } from "../sanity";
+import Button from "../utilities/Button";
+import { urlFor } from "../../sanity";
 
 const Projects = ({ style, space, data }) => {
   return (
