@@ -4,6 +4,7 @@ export const authorQuery = `*[_type == "author"]{
     title,
     mainImage,
     main_description,
+    sub_description,
     github_link,
     resume,
     current_stack[] -> {

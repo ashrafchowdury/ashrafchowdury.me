@@ -22,6 +22,7 @@ import { urlFor } from "../sanity";
 //
 import Link from "next/link";
 import Language from "../components/blocks/Language";
+import Experiance from "../components/blocks/Experiance";
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -33,7 +34,7 @@ export default function Home() {
     <>
       {/********* Header Section ************/}
 
-      <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14">
+      <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14 lg:mb-28">
         <p className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
         </p>
@@ -45,9 +46,9 @@ export default function Home() {
         </h2>
 
         <p className=" text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos
-          nemo expedita illo? Eveniet ipsum repudiandae doloribus unde enim
-          quod, voluptatum sapiente beatae, repudiandae doloribus unde enim
+          I like building Web applications that help people find what they are
+          looking for and navigate through websites. I'm always learning new
+          technologies to improve my skills to better myself in the future.
         </p>
 
         <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
@@ -110,34 +111,7 @@ export default function Home() {
       </div>
 
       {/********************************* Experiance Section ********************************/}
-      <Heading
-        title="Expreriance"
-        icon="fa-regular fa-address-book"
-        i_style="font-normal"
-      />
-      <section className=" w-full mb-20 lg:mb-28">
-        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">
-          <h4 className=" text-[22px] md:text-2xl lg:text-3xl font-semibold mb-2 md:mb-5">
-            Starting
-          </h4>
-          <p className=" text-sm md:text-[16px] lg:text-lg leading-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-            nostrum est asperiores quasi error, necessitatibus dolorum,
-            voluptatem nisi unde quia ipsam quidem commodi dicta eaque dolor
-            maxime facilis
-          </p>
-        </div>
-        <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">
-          <h4 className=" text-[22px] md:text-2xl lg:text-3xl font-semibold mb-2 md:mb-5">
-            Right Now
-          </h4>
-          <p className=" text-sm md:text-[16px] lg:text-lg leading-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-            nostrum est asperiores quasi error, necessitatibus dolorum,
-            voluptatem nisi unde quia ipsam quidem
-          </p>
-        </div>
-      </section>
+      <Experiance />
 
       <Heading
         title=" My Latest Article"

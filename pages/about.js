@@ -1,17 +1,24 @@
 import Bio from "../components/blocks/Bio";
 import Heading from "../components/utilities/Heading";
+import Experiance from "../components/blocks/Experiance";
 import { dehydrate, QueryClient } from "react-query";
 import { authorQuery } from "../components/query/querys";
 import { fetchQuery } from "../components/query/fetchQuery";
 import { useQueryData } from "../components/query/useQueryData";
 
+
 const about = () => {
   const { data } = useQueryData("author");
   return (
     <>
-      <Heading title="About Me" style=" lg:!mt-16 lg:!mb-28" />
+      <Heading
+        title="About Me"
+        style=" lg:!mt-16"
+        icon="fa-regular fa-user"
+        i_style="font-normal"
+      />
       <Bio author={data} />
-      <section></section>
+      <Experiance />
     </>
   );
 };

@@ -28,6 +28,11 @@ export default {
       type: "string",
     },
     {
+      name: "sub_description",
+      title: "Sub_description",
+      type: "string",
+    },
+    {
       name: "github_link",
       title: "Github_link",
       type: "url",

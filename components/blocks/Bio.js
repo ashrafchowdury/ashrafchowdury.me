@@ -5,7 +5,7 @@ import { urlFor } from "../../sanity";
 const Bio = ({ author }) => {
   return (
     <>
-      <section className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 xl:mt-38 mb-6 lg:mb-32 flex flex-col lg:flex-row lg:justify-center items-center lg:items-end">
+      <section className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 lg:mt-44 mb-10 lg:mb-44 flex flex-col lg:flex-row lg:justify-center items-center lg:items-center">
         {author?.map((value) => {
           return (
             <React.Fragment key={value._id}>
@@ -14,14 +14,19 @@ const Bio = ({ author }) => {
                 alt="Ashraf Chowdury"
                 className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[350px] xl:w-[420px] h-[280px] sm:h-[320px] md:h-[380px] lg:h-[420px] xl:h-[480px] object-cover rounded"
               />
-              <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[560px] lg:ml-7 xl:ml-9">
+              <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[610px] lg:ml-7 xl:ml-9">
                 <h4 className="gradiant_text text-[26px] lg:text-3xl xl:text-[36px] my-2 xl:mb-4 font-bold">
                   {value.title}
                 </h4>
-                <p className=" text-sm md:text-[16px] xl:text-lg leading-7 md:leading-8 lg:leading-9 xl:leading-9 break-all">
+                <p className=" text-sm md:text-[16px]  leading-7 md:leading-8 lg:leading-9 break-all">
                   {value.main_description}
                 </p>
-                <p className=" text-lg font-bold capitalize mt-2 mb-3">
+                {value?.sub_description && (
+                  <p className=" text-sm md:text-[16px] leading-7 md:leading-8 lg:leading-9 break-all mt-2 md:mt-3">
+                    {value?.sub_description}
+                  </p>
+                )}
+                <p className=" text-lg font-bold capitalize mt-3 mb-3">
                   My current stack
                 </p>
                 <div className="current_stack w-full flex flex-wrap">

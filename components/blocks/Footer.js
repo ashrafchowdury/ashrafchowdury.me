@@ -15,10 +15,13 @@ export class Footer extends Component {
           </div>
 
           <div className=" text-center mt-8 md:mt-10 xl:mt-16">
-            <h5 className=" text-xl md:text-2xl xl:text-3xl font-bold capitalize">Get in touch with Me</h5>
+            <h5 className=" text-xl md:text-2xl xl:text-3xl font-bold capitalize">
+              Get in touch with Me
+            </h5>
             <p className=" text-sm md:text-[16px] xl:text-lg lg:leading-7 xl:leading-8 mt-2 lg:mt-4 mb-8 lg:mx-auto lg:w-[440px] xl:w-[480px]">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus
-              iste voluptatum iure.
+              If you want to learn more about the technologies, you can follow
+              me on my social media. I'm always happy to help you out. Feel free
+              to get in touch with me on Twitter or Linkedin.
             </p>
             <div className="social_links">
               <a href="https://twitter.com/Ashraf_365" target="_blank">
