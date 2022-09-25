@@ -14,7 +14,7 @@ const Bio = ({ author }) => {
                 alt="Ashraf Chowdury"
                 className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[350px] xl:w-[420px] h-[280px] sm:h-[320px] md:h-[380px] lg:h-[420px] xl:h-[480px] object-cover rounded"
               />
-              <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[610px] lg:ml-7 xl:ml-9">
+              <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[620px] lg:ml-7 xl:ml-9">
                 <h4 className="gradiant_text text-[26px] lg:text-3xl xl:text-[36px] my-2 xl:mb-4 font-bold">
                   {value.title}
                 </h4>

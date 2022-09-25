@@ -5,9 +5,7 @@ const Experiance = () => {
   return (
     <>
       <Heading
-        title="Expreriance"
-        icon="fa-regular fa-address-book"
-        i_style="font-normal"
+        title="Expreriance 🏹"
       />
       <section className=" w-full mb-20 lg:mb-28">
         <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">

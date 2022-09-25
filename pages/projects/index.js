@@ -13,7 +13,7 @@ const projects = () => {
   const { data } = useQueryData("project");
   return (
     <>
-      <Heading title="Projects" style=" lg:!mt-16 lg:!mb-28" />
+      <Heading title="My Coding Project ⚒️" style=" lg:!mt-16 lg:!mb-28" />
 
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
         {data?.map((value) => {

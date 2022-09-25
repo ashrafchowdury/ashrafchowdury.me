@@ -25,8 +25,8 @@ export default function Document() {
         ></script>
 
         {/**************** Font Awesome CDN **********/}
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="shortcut icon" href="/icons/icon-96x96.png" type="image/x-icon" />
+
+        <link rel="shortcut icon" href="/ashraf.png" type="image/x-icon" />
       </Head>
       <body>
         <Main />

@@ -6,17 +6,11 @@ import { authorQuery } from "../components/query/querys";
 import { fetchQuery } from "../components/query/fetchQuery";
 import { useQueryData } from "../components/query/useQueryData";
 
-
 const about = () => {
   const { data } = useQueryData("author");
   return (
     <>
-      <Heading
-        title="About Me"
-        style=" lg:!mt-16"
-        icon="fa-regular fa-user"
-        i_style="font-normal"
-      />
+      <Heading title="About Me 🧑" style=" lg:!mt-16" />
       <Bio author={data} />
       <Experiance />
     </>

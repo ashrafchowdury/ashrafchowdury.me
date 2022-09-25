@@ -46,9 +46,10 @@ export default function Home() {
         </h2>
 
         <p className=" text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12">
-          I like building Web applications that help people find what they are
-          looking for and navigate through websites. I'm always learning new
-          technologies to improve my skills to better myself in the future.
+          I like to build 🏗️ excellent Web applications using Javascript and
+          React.js. Currently, I am focused on empowering myself by learning
+          some new technologies 👨‍💻 that will help me to better myself in my
+          future journey.
         </p>
 
         <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
@@ -71,11 +72,7 @@ export default function Home() {
       <Bio author={author} />
 
       {/********************************* Project  Section ********************************/}
-      <Heading
-        title="My Coding Project"
-        icon="fa-solid fa-screwdriver-wrench"
-        style="mt-12"
-      />
+      <Heading title="My Coding Project ⚒️" style="mt-12" />
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
         {project
           ?.filter((val) => val.project_id < 4)
@@ -89,7 +86,7 @@ export default function Home() {
       </section>
 
       {/********************************* Language  Section ********************************/}
-      <Heading title="My Ecosystem" icon="fa-solid fa-network-wired" />
+      <Heading title="My Ecosystem ♋" />
       <section>
         <div className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1200px] mx-auto flex flex-wrap justify-center">
           {language?.map((value) => {
@@ -113,11 +110,7 @@ export default function Home() {
       {/********************************* Experiance Section ********************************/}
       <Experiance />
 
-      <Heading
-        title=" My Latest Article"
-        icon="fa-solid fa-newspaper"
-        i_style="font-normal"
-      />
+      <Heading title=" My Latest Article 🛰️"  />
       <article className=" w-[90%] md-[700px] lg:w-[1000px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
         {blog?.map((value) => {
           return (

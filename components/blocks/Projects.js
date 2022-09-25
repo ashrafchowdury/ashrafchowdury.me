@@ -2,7 +2,7 @@ import Link from "next/link";
 import Button from "../utilities/Button";
 import { urlFor } from "../../sanity";
 
-const Projects = ({ style, space, data }) => {
+const Projects = ({ data }) => {
   return (
     <>
       <div

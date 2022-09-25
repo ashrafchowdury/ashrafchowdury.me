@@ -1,11 +1,11 @@
 import React from "react";
 
-const Heading = ({ title, style, icon, i_style }) => {
+const Heading = ({ title, style }) => {
   return (
     <h3
       className={`text-[22px] md:text-3xl lg:text-4xl font-bold uppercase text-center mt-10 lg:mt-6 mb-10 lg:mb-20 ${style}`}
     >
-      {title} <i className={`${icon} ml-2 ${i_style ?? "font-semibold"}`}></i>
+      {title}
     </h3>
   );
 };

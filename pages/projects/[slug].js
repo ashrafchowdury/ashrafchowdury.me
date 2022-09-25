@@ -1,11 +1,11 @@
 import Button from "../../components/utilities/Button";
 import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
-import { projectQuery } from "../../components/query/querys";
 import { useQueryData } from "../../components/query/useQueryData";
 
-const detaile = () => {
-  const { data, isError } = useQueryData("post");
+const slug = () => {
+  const { data, isError } = useQuery("post", { staleTime: 500000 });
+
   return (
     <>
       {/* Main Image */}
@@ -57,7 +57,7 @@ const detaile = () => {
   );
 };
 
-export default detaile;
+export default slug;
 
 //genarating blog path
 export async function getStaticPaths() {
@@ -86,10 +86,26 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   //setup the Query Client to fetch the data in sercer side
   const queryClient = new QueryClient();
+  const query = `*[_type == "project" && slug.current == $slug][0]{
+    _id,
+    title,
+    mainImage,
+    publishedAt,
+    slug,
+    description_1,
+    description_2,
+    github_link,
+    website,
+    direction,
+    project_id,
+    categories[] -> {
+      title,
+     },
+  }`;
 
   //Requests for fetching project data for Sanity
   await queryClient.prefetchQuery("post", () => {
-    const post = sanityClient.fetch(projectQuery, {
+    const post = sanityClient.fetch(query, {
       slug: params?.slug,
     });
     return post;
