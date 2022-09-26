@@ -70,9 +70,9 @@ export default {
   ],
   orderings: [
     {
-      name: "title",
-      title: "Title",
-      by: [{ field: "title", direction: "asc" }],
+      name: "project_id",
+      title: "Project Id",
+      by: [{ field: "name", direction: "desc" }],
     },
   ],
 };

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Bio from "../components/blocks/Bio";
 import Heading from "../components/utilities/Heading";
 import Experiance from "../components/blocks/Experiance";
@@ -10,6 +11,9 @@ const about = () => {
   const { data } = useQueryData("author");
   return (
     <>
+      <Head>
+        <title> About Ashraf Chowdury </title>
+      </Head>
       <Heading title="About Me 🧑" style=" lg:!mt-16" />
       <Bio author={data} />
       <Experiance />

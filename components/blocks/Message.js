@@ -46,7 +46,7 @@ const Message = () => {
       )}
 
       <div
-        className=" text-xl lg:text-2xl fixed bottom-5 lg:bottom-9 right-5 lg:right-9 z-20 text-white bg-[#3792E4] py-[9px] lg:py-[12px] px-[13px] lg:px-[17px] rounded-full cursor-pointer"
+        className=" text-xl lg:text-2xl fixed bottom-5 lg:bottom-9 right-5 lg:right-9 z-20 text-white bg-[#3792E4] py-[9px] lg:py-[12px] px-[13px] lg:px-[17px] rounded-full cursor-pointer hover:scale-110 duration-700"
         onClick={() => (icon == false ? seticon(true) : seticon(false))}
       >
         {icon ? (

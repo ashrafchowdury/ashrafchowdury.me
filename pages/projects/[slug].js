@@ -13,6 +13,7 @@ const slug = () => {
         src={urlFor(data.mainImage).url()}
         alt="image"
         className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
+        loading="lazy"
       />
 
       {/***************** Artical Section ************************/}

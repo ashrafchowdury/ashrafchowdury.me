@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import Heading from "../../components/utilities/Heading";
 import Projects from "../../components/blocks/Projects";
 import { dehydrate, QueryClient, useQuery } from "react-query";
@@ -6,17 +7,28 @@ import { projectQuery } from "../../components/query/querys";
 import { fetchQuery } from "../../components/query/fetchQuery";
 import { useQueryData } from "../../components/query/useQueryData";
 
-//sanity
-import { sanityClient, urlFor } from "../../sanity";
-
 const projects = () => {
   const { data } = useQueryData("project");
+  const [newData, setnewData] = useState([]);
+  useEffect(() => {
+const anything = data.filter((val) => {
+   const arr = [];
+   arr.push(val.project_id)
+   console.log(arr.sort(function(a, b){return a - b}));
+})
+
+// console.log(data.sort(function(a, b){return a - b}));
+  }, []);
+
   return (
     <>
+      <Head>
+        <title> Building Projects </title>
+      </Head>
       <Heading title="My Coding Project ⚒️" style=" lg:!mt-16 lg:!mb-28" />
 
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
-        {data?.map((value) => {
+        {data?.sort().map((value) => {
           return (
             <React.Fragment key={value._id}>
               <Projects data={value} />

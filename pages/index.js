@@ -23,6 +23,7 @@ import { urlFor } from "../sanity";
 import Link from "next/link";
 import Language from "../components/blocks/Language";
 import Experiance from "../components/blocks/Experiance";
+import Head from "next/head";
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -32,9 +33,16 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Ashraf Chowdury Portfolio | Front-End Developer</title>
+        <meta
+          name="description"
+          content="Hi, My name is Ashraf Chowdury and I am a Front-End Developer. I like to build excellent Web applications using Javascript and React.js. Currently, I am focused on empowering myself by learning some new technologies that will help me to better myself in my future journey."
+        />
+      </Head>
       {/********* Header Section ************/}
 
-      <header className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-10 xl:mt-14 lg:mb-28">
+      <header className="header_animate w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-8 xl:mt-14 lg:mb-24">
         <p className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
         </p>
@@ -56,6 +64,9 @@ export default function Home() {
           <i className="fa-solid fa-code-fork lg:mr-1"></i> Do You Want To Work
           With Me?
         </Button>
+        <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
+          <div className="dot_animation w-2 h-2 rounded-full bg-white m-auto"></div>
+        </div>
       </header>
 
       <article className="w-full h-48 md:h-[250px] lg:h-[300px] my-10 bg-white dark:bg-[#253345] flex justify-center items-center">
@@ -110,8 +121,8 @@ export default function Home() {
       {/********************************* Experiance Section ********************************/}
       <Experiance />
 
-      <Heading title=" My Latest Article 🛰️"  />
-      <article className=" w-[90%] md-[700px] lg:w-[1000px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
+      <Heading title=" My Latest Article 🛰️" />
+      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
         {blog?.map((value) => {
           return (
             <React.Fragment key={value._id}>

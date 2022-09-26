@@ -24,9 +24,14 @@ export default function Document() {
           crossorigin="anonymous"
         ></script>
 
-        {/**************** Font Awesome CDN **********/}
-
+        {/**************** Favion **********/}
         <link rel="shortcut icon" href="/ashraf.png" type="image/x-icon" />
+
+        <title>Ashraf Chowdury Portfolio | Front-End Developer</title>
+        <meta
+          name="description"
+          content="Hi, My name is Ashraf Chowdury and I am a Front-End Developer. I like to build excellent Web applications using Javascript and React.js. Currently, I am focused on empowering myself by learning some new technologies that will help me to better myself in my future journey."
+        />
       </Head>
       <body>
         <Main />

@@ -10,7 +10,7 @@ This is my personal portfolio page. It's a one-page website that shows my person
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
 <img src="https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/icons%2Fnext.png?alt=media&token=c8d471d3-ce4a-419f-b152-d89b5f55a797" alt="nextjs" width="40" height="40"/> 
 <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> 
-<img src="https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/icons%2Fquery.png?alt=media&token=b6671623-43d2-4159-9849-febb1fce68ed" alt="react_query" width="40" height="40"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/icons%2Fquery.png?alt=media&token=b6671623-43d2-4159-9849-febb1fce68ed" alt="react_query" width="40" height="36"/>
 <img src="https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/icons%2Fsanity_cms.png?alt=media&token=a82d7316-ee9c-423e-9bf5-e6ce7666c7c9" alt="sanity" width="140" height="30"/>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/>
 <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> 
