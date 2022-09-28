@@ -24,11 +24,12 @@ export const blogQuery = `*[_type == "blog"]{
 
 //Language Query
 export const languageQuery = `*[_type == "language"]{
+    _id,
     name,
     tooltip,
     mainImage,
   }`;
-  
+
 //Project Query
 export const projectQuery = `*[_type == "project"]{
     _id,
@@ -46,3 +47,8 @@ export const projectQuery = `*[_type == "project"]{
       title,
      },
   }`;
+//Experiance Query
+export const experianceQuery = `*[_type == "experiance"]{
+  _id,
+  body, 
+}`;

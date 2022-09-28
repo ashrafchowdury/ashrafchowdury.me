@@ -42,16 +42,16 @@ body::-webkit-scrollbar-thumb {
 }
 @layer components {
   .desktop_links a {
-    @apply dark:text-white mx-4 font-semibold cursor-pointer;
+    @apply dark:text-white mx-4 font-semibold cursor-pointer hover:scale-110 duration-500 inline-block;
   }
   .mobile_links a {
     @apply text-lg;
   }
-
   /**/
   .icon_hover {
-    @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-700 cursor-pointer;
+    @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-500 cursor-pointer;
   }
+  /**/
   .current_stack span {
     @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-white dark:bg-[#253345] dark:text-white my-2 mr-2 xl:mr-[10px];
   }
@@ -59,12 +59,19 @@ body::-webkit-scrollbar-thumb {
   .social_links a {
     @apply md:text-lg lg:text-xl py-[8px] lg:py-[10px] px-[11px] lg:px-[13px] rounded-full mx-2 xl:mx-3 bg-white dark:bg-[#253345];
   }
-}
-
-/************************ This is for the Blog Detaile Page **************************/
-@layer components {
+  /**/
   .blog p {
     @apply text-sm lg:text-[18px] lg:w-[95%] rounded leading-6 lg:leading-8 my-5 break-all;
+  }
+  /**/
+  .experiance h3 {
+    @apply text-[22px] md:text-2xl lg:text-[32px] font-semibold mb-3 md:mb-6;
+  }
+  .experiance h4 {
+    @apply text-[16px] md:text-lg  font-medium mt-16 md:mt-28 mb-2 md:mb-3;
+  }
+  .experiance p {
+    @apply text-sm md:text-[16px] lg:text-lg leading-6;
   }
 }
 
@@ -79,7 +86,6 @@ body::-webkit-scrollbar-thumb {
 .tooltip {
   position: relative;
 }
-
 .tooltip span {
   /* visibility: hidden; */
   position: absolute;
@@ -90,7 +96,6 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   transition: opacity 0.9s;
 }
-
 .tooltip span::after {
   content: "";
   position: absolute;
@@ -101,7 +106,6 @@ body::-webkit-scrollbar-thumb {
   border-style: solid;
   border-color: #3792e4 transparent transparent transparent;
 }
-
 .tooltip:hover span {
   z-index: 3;
   visibility: visible;

@@ -123,7 +123,7 @@ export default Nav;
 
 export const Links = ({ style }) => {
   return (
-    <div className={style}>
+    <div className={`${style}`}>
       <Link href="/">🏚️ Home</Link>
       <Link href="/projects">⚒️ Projects</Link>
       <a href="https://ashrafchowdury09.hashnode.dev/" target="_blank">

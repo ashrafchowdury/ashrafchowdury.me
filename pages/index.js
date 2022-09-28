@@ -14,6 +14,7 @@ import {
   blogQuery,
   languageQuery,
   projectQuery,
+  experianceQuery,
 } from "../components/query/querys";
 import { fetchQuery } from "../components/query/fetchQuery";
 import { useQueryData } from "../components/query/useQueryData";
@@ -24,6 +25,7 @@ import Link from "next/link";
 import Language from "../components/blocks/Language";
 import Experiance from "../components/blocks/Experiance";
 import Head from "next/head";
+import { data } from "autoprefixer";
 // import AOS from "aos";
 // import 'aos/dist/aos.css';
 
@@ -32,6 +34,7 @@ export default function Home() {
   const { data: author } = useQueryData("author");
   const { data: blog } = useQueryData("blog");
   const { data: language } = useQueryData("language");
+  const { data: experiance } = useQueryData("experiance");
 
   // useEffect(() => {
   //   AOS.init({ duration: 2000 });
@@ -84,8 +87,8 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
-          <div className="dot_animation w-2 h-2 rounded-full bg-white m-auto"></div>
+        <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] border-[#67c2f6] dark:border-white mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
+          <div className="dot_animation w-2 h-2 rounded-full bg-[#67c2f6] dark:bg-white m-auto"></div>
         </div>
       </header>
 
@@ -139,10 +142,13 @@ export default function Home() {
       </div>
 
       {/********************************* Experiance Section ********************************/}
-      <Experiance />
+      <Experiance data={experiance} />
 
       <Heading title=" My Latest Article 🛰️" />
-      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
+      <article
+        data-aos="zoom-in-up"
+        className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline"
+      >
         {blog?.map((value) => {
           return (
             <React.Fragment key={value._id}>
@@ -168,6 +174,8 @@ export async function getServerSideProps() {
   await fetchQuery(queryClient, "language", languageQuery);
   //Requests for fetching project data for Sanity
   await fetchQuery(queryClient, "project", projectQuery);
+  //Requests for fetching project data for Sanity
+  await fetchQuery(queryClient, "experiance", experianceQuery);
 
   //dehydrate the setching data
   return {
