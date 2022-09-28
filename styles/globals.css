@@ -83,7 +83,7 @@ body::-webkit-scrollbar-thumb {
 .tooltip span {
   /* visibility: hidden; */
   position: absolute;
-  z-index: 1;
+  z-index: -3;
   bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
@@ -103,6 +103,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .tooltip:hover span {
+  z-index: 3;
   visibility: visible;
   opacity: 1;
 }

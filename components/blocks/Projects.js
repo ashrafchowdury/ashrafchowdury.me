@@ -7,7 +7,9 @@ const Projects = ({ data }) => {
   return (
     <>
       <div
-        className={`mb-10 md:mb-12 lg:mb-32 xl:mb-36 sm:w-[90%] md:w-[75%] lg:w-[90%] lg:flex lg:items-center lg:justify-center flex-row-reverse`}
+        className={`mb-10 md:mb-12 lg:mb-32 xl:mb-36 sm:w-[90%] md:w-[75%] lg:w-[90%] lg:flex lg:items-center lg:justify-center ${
+          data.direction && "flex-row-reverse"
+        }`}
         // data-aos="zoom-in-up"
       >
         <Link href={`/projects/${data.slug.current}`}>
@@ -23,7 +25,9 @@ const Projects = ({ data }) => {
 
         <div
           data-aos="fade-right"
-          className={`w-[100%] xl:w-[55%] lg:mr-5 xl:mr-7`}
+          className={`w-[100%] xl:w-[55%]  ${
+            data.direction ? "lg:mr-5 xl:mr-7" : " lg:ml-6 xl:ml-8"
+          }`}
         >
           <h4 className=" dark:text-white text-xl lg:text-3xl xl:text-[36px] my-2 xl:mb-3 font-bold">
             {data.title}
