@@ -8,6 +8,7 @@ const Projects = ({ data }) => {
     <>
       <div
         className={`mb-10 md:mb-12 lg:mb-32 xl:mb-36 sm:w-[90%] md:w-[75%] lg:w-[90%] lg:flex lg:items-center lg:justify-center flex-row-reverse`}
+        // data-aos="zoom-in-up"
       >
         <Link href={`/projects/${data.slug.current}`}>
           <img
@@ -16,10 +17,14 @@ const Projects = ({ data }) => {
             title={`This ${data.title} Bulding By Ashraf Chowdury`}
             loading="lazy"
             className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[240px] sm:h-[280px] md:h-[320px] lg:h-[310px] xl:h-[330px] object-cover rounded cursor-pointer hover:scale-105 duration-700"
+            data-aos="fade-left"
           />
         </Link>
 
-        <div className={`w-[100%] xl:w-[55%] lg:mr-5 xl:mr-7`}>
+        <div
+          data-aos="fade-right"
+          className={`w-[100%] xl:w-[55%] lg:mr-5 xl:mr-7`}
+        >
           <h4 className=" dark:text-white text-xl lg:text-3xl xl:text-[36px] my-2 xl:mb-3 font-bold">
             {data.title}
           </h4>

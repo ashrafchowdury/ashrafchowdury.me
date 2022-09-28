@@ -17,15 +17,19 @@ const Blog = ({ data }) => {
       />
       <div className=" w-[90%] mx-auto">
         <p className=" text-xs flex justify-between mt-3">
-          <span className=" px-3 py-1 rounded bg-sky-300">Web Dev</span>{" "}
+          <span className=" font-bold">Web Dev</span>{" "}
           <span> {new Date(data.publishedAt).toLocaleString()}</span>
         </p>
-        <h1 className="text-lg md:text-xl mt-3">{data.title}</h1>
-        <p className=" text-xs lg:text-sm leading-6 lg:leading-7 h-16 md:h-20 overflow-hidden  break-all mt-1 lg:mt-2 mb-6">
-          {data.description}
-        </p>
-        <a href={data.link} target="_blank" className=" mb-5 block">
-          <Button style="w-full text-sm py-2">
+        <h1 className="font-medium lg:h-16 text-lg md:text-xl lg:text-2xl mt-3 break-all overflow-hidden">
+          {data.title}
+        </h1>
+
+        <a
+          href={data.link}
+          target="_blank"
+          className=" mb-5 block mt-6 md:mt-7"
+        >
+          <Button style="w-full text-sm py-[5px] md:py-2">
             Read Full Article{" "}
             <i className="fa-solid fa-arrow-right-long ml-1"></i>
           </Button>

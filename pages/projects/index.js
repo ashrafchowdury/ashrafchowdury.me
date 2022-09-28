@@ -2,23 +2,13 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Heading from "../../components/utilities/Heading";
 import Projects from "../../components/blocks/Projects";
-import { dehydrate, QueryClient, useQuery } from "react-query";
+import { dehydrate, QueryClient } from "react-query";
 import { projectQuery } from "../../components/query/querys";
 import { fetchQuery } from "../../components/query/fetchQuery";
 import { useQueryData } from "../../components/query/useQueryData";
 
 const projects = () => {
   const { data } = useQueryData("project");
-  const [newData, setnewData] = useState([]);
-  useEffect(() => {
-const anything = data.filter((val) => {
-   const arr = [];
-   arr.push(val.project_id)
-   console.log(arr.sort(function(a, b){return a - b}));
-})
-
-// console.log(data.sort(function(a, b){return a - b}));
-  }, []);
 
   return (
     <>

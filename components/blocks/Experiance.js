@@ -7,7 +7,7 @@ const Experiance = () => {
       <Heading
         title="Expreriance 🏹"
       />
-      <section className=" w-full mb-20 lg:mb-28">
+      <section className=" w-full mb-20 lg:mb-44">
         <div className=" w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto my-12 md:my-20 lg:my-24">
           <h4 className=" text-[22px] md:text-2xl lg:text-3xl font-semibold mb-2 md:mb-5">
             Starting

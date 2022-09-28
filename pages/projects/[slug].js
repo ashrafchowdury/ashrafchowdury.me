@@ -1,7 +1,6 @@
 import Button from "../../components/utilities/Button";
 import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
-import { useQueryData } from "../../components/query/useQueryData";
 
 const slug = () => {
   const { data, isError } = useQuery("post", { staleTime: 500000 });

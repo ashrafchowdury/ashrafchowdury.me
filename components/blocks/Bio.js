@@ -1,11 +1,16 @@
 import React from "react";
 import Button from "../utilities/Button";
 import { urlFor } from "../../sanity";
+import { Toaster, toast } from "react-hot-toast";
 
 const Bio = ({ author }) => {
   return (
     <>
-      <section className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 lg:mt-44 mb-10 lg:mb-44 flex flex-col lg:flex-row lg:justify-center items-center lg:items-center">
+      <Toaster position="top-center" reverseOrder={false} />
+      <section
+       className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 lg:mt-44 mb-10 lg:mb-44 flex flex-col lg:flex-row lg:justify-center items-center lg:items-center"
+       data-aos="zoom-in-up"
+       >
         {author?.map((value) => {
           return (
             <React.Fragment key={value._id}>
@@ -40,6 +45,10 @@ const Bio = ({ author }) => {
                   <Button style=" w-full py-[10px] text-sm lg:text-[16px] font-semibold">
                     <a
                       href={value.resume}
+                      onClick={() =>
+                        !value.resume &&
+                        toast.error("Resume is not ready right now")
+                      }
                       target="_blank"
                       className=" w-[100%] py-[10px] px-2 hover:text-white dark:hover:text-gray-700 duration-500"
                     >

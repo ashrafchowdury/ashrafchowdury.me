@@ -26,10 +26,6 @@ export default {
       title: "Published at",
       type: "datetime",
     },
-    {
-      name: "description",
-      title: "Description",
-      type: "string",
-    },
+
   ],
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 //
 import Blog from "../components/blocks/Blog";
 import Bio from "../components/blocks/Bio";
@@ -24,12 +24,18 @@ import Link from "next/link";
 import Language from "../components/blocks/Language";
 import Experiance from "../components/blocks/Experiance";
 import Head from "next/head";
+// import AOS from "aos";
+// import 'aos/dist/aos.css';
 
 export default function Home() {
   const { data: project } = useQueryData("project");
   const { data: author } = useQueryData("author");
   const { data: blog } = useQueryData("blog");
   const { data: language } = useQueryData("language");
+
+  // useEffect(() => {
+  //   AOS.init({ duration: 2000 });
+  // }, []);
 
   return (
     <>
@@ -43,27 +49,29 @@ export default function Home() {
       {/********* Header Section ************/}
 
       <header className="header_animate w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-8 xl:mt-14 lg:mb-24">
-        <p className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
+        <p data-aos="fade-down" className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10">
           HI, MY NAME IS
         </p>
-        <h1 className="gradiant_text text-[34px] sm:text-[40px] md:text-5xl lg:text-[72px] xl:text-[90px] leading-[45px] xl:leading-[110px] font-bold mb-2 sm:mb-3 md:mb-5 lg:mb-4 xl:mb-1">
+        <h1 data-aos="fade-down" className="gradiant_text text-[34px] sm:text-[40px] md:text-5xl lg:text-[72px] xl:text-[90px] leading-[45px] xl:leading-[110px] font-bold mb-2 sm:mb-3 md:mb-5 lg:mb-4 xl:mb-1">
           Ashraf Chowdury. <br />
         </h1>
-        <h2 className="gradiant_text capitalize text-[32px] sm:text-[38px] md:text-[42px] lg:text-[68px] xl:text-[80px] leading-[45px] lg:leading-[88px] xl:leading-[110px] font-bold mb-3 md:mb-5">
+        <h2 data-aos="fade-down" className="gradiant_text capitalize text-[32px] sm:text-[38px] md:text-[42px] lg:text-[68px] xl:text-[80px] leading-[45px] lg:leading-[88px] xl:leading-[110px] font-bold mb-3 md:mb-5">
           I am a front-end developer.
         </h2>
 
-        <p className=" text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12">
+        <p data-aos="fade-down" className="custom_text text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12">
           I like to build 🏗️ excellent Web applications using Javascript and
           React.js. Currently, I am focused on empowering myself by learning
           some new technologies 👨‍💻 that will help me to better myself in my
           future journey.
         </p>
-
-        <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
+<div data-aos="fade-up">
+    <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
           <i className="fa-solid fa-code-fork lg:mr-1"></i> Do You Want To Work
           With Me?
         </Button>
+</div>
+      
         <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
           <div className="dot_animation w-2 h-2 rounded-full bg-white m-auto"></div>
         </div>
