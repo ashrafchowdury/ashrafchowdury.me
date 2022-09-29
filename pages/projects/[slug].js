@@ -3,13 +3,13 @@ import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 
 const slug = () => {
-  const { data, isError } = useQuery("post", { staleTime: 500000 });
+  const { data } = useQuery("post", { staleTime: 500000 });
 
   return (
     <>
       {/* Main Image */}
       <img
-        src={urlFor(data.mainImage).url()}
+        src={urlFor(data?.mainImage).url()}
         alt="image"
         className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
         loading="lazy"
@@ -19,33 +19,33 @@ const slug = () => {
       <article className="blog w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px] mx-auto mb-16 lg:mb-24">
         <span className=" mt-1 md:mt-2 mb-2 lg:mb-5 text-xs md:text-sm dark:text-white block">
           {" "}
-          {new Date(data.publishedAt).toLocaleString()}
+          {new Date(data?.publishedAt).toLocaleString()}
         </span>
 
         {/* Main Title */}
         <h1 className="text-2xl md:text-4xl lg:text-5xl lg:leading-[65px] font-bold lg:mb-6">
-          {data.title}
+          {data?.title}
         </h1>
-        <p>{data.description_1}</p>
-        {data.description_2 && <p>{data.description_2}</p>}
+        <p>{data?.description_1}</p>
+        {data?.description_2 && <p>{data?.description_2}</p>}
 
         <span className=" dark:text-white text-lg lg:text-2xl font-bold mt-8 lg:mt-10 mb-2 lg:mb-4 block">
           Build With
         </span>
         <div className="current_stack w-full flex flex-wrap">
-          {data.categories.map((stack, ind) => {
+          {data?.categories.map((stack, ind) => {
             return <span key={ind}>{stack.title}</span>;
           })}
         </div>
 
         <div className=" flex items-center justify-center mt-8 md:mt-20">
-          <a href={data.github_link} target="_blank">
+          <a href={data?.github_link} target="_blank">
             <Button style=" py-[7px] md:py-[9px] px-8 md:px-12 text-sm lg:text-lg font-bold">
               <i className="fa-solid fa-code-compare mr-1"></i> View Repo
             </Button>
           </a>
           <a
-            href={data.website}
+            href={data?.website}
             className=" text-sm lg:text-lg text-center ml-4 md:ml-6 "
           >
             <i className="fa-solid fa-up-right-from-square mr-1"></i>
