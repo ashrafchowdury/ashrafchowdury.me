@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Nav = () => {
   //use for change the theme
   const [mood, setmood] = useState("dark");
   //use for show the mobile menu section and hide on desktop
   const [menu, setmenu] = useState("hidden");
-  //use for search blogs on mobile
-  const router = useRouter();
+
 
   useEffect(() => {
     //condition for see the device are under 1050px or not
@@ -19,9 +17,7 @@ const Nav = () => {
       //check in LS theme equal to dark or not
       // and also check default media preference
       if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches) // check the media is dark or not
+        localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) // check the media is dark or not
       ) {
         setmood("dark");
         //add class name on html tag
@@ -86,9 +82,8 @@ const Nav = () => {
           )}
         </section>
 
-        {/************************ Condition for show the light menu icon or dark menu icon ***************************/}
-        {/** if theme equal to dark then show light menu icon other vise show the dark menu icon **/}
 
+        {/************ Mobile Me nu Icon ***********/}
         <span
           className="icon_hover py-[4px] px-[10px] text-xl ml-2 md:ml-4 lg:hidden dark:text-white"
           onClick={() => setmenu("block")}
@@ -121,6 +116,7 @@ const Nav = () => {
 
 export default Nav;
 
+//Links on Navbar
 export const Links = ({ style }) => {
   return (
     <div className={`${style}`}>

@@ -10,7 +10,6 @@ const Projects = ({ data }) => {
         className={`mb-10 md:mb-12 lg:mb-32 xl:mb-36 sm:w-[90%] md:w-[75%] lg:w-[90%] lg:flex lg:items-center lg:justify-center ${
           data.direction && "flex-row-reverse"
         }`}
-        // data-aos="zoom-in-up"
       >
         <Link href={`/projects/${data.slug.current}`}>
           <img
@@ -51,6 +50,7 @@ const Projects = ({ data }) => {
             </a>
             <a
               href={data.website}
+              target="_blank"
               className=" text-sm lg:text-[16px] text-center ml-4 "
             >
               <i className="fa-solid fa-up-right-from-square mr-1"></i>

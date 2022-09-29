@@ -3,10 +3,6 @@
   "project": {
     "name": "portfolio"
   },
-  "api": {
-    "projectId": "wiev2jo5",
-    "dataset": "production"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
@@ -15,9 +11,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

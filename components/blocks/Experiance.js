@@ -3,6 +3,8 @@ import Heading from "../utilities/Heading";
 import { PortableText } from "@portabletext/react";
 
 const Experiance = ({ data }) => {
+  const project_id = process.env.SANITY_PROJECT_ID;
+  const project_dataset = process.env.SANITY_PROJECT_DATASET;
   return (
     <>
       <Heading title="Expreriance 🏹" />
@@ -14,8 +16,8 @@ const Experiance = ({ data }) => {
           return (
             <React.Fragment key={value._id}>
               <PortableText
-                projectId="wiev2jo5"
-                dataset="production"
+                projectId={project_id}
+                dataset={project_dataset}
                 value={value.body}
               />
             </React.Fragment>

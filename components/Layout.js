@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Nav />
-      <Message />
+      {/* <Message /> */}
       {children}
       <Footer />
     </>
