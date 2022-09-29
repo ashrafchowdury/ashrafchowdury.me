@@ -12,14 +12,15 @@ const Projects = ({ data }) => {
         }`}
       >
         <Link href={`/projects/${data.slug.current}`}>
-          <img
-            src={urlFor(data.mainImage).url()}
-            alt={data.title}
-            title={`This ${data.title} Bulding By Ashraf Chowdury`}
-            loading="lazy"
-            className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[240px] sm:h-[280px] md:h-[320px] lg:h-[310px] xl:h-[330px] object-cover rounded cursor-pointer hover:scale-105 duration-700"
-            data-aos="fade-left"
-          />
+          <div data-aos="fade-left">
+            <img
+              src={urlFor(data.mainImage).url()}
+              alt={data.title}
+              title={`This ${data.title} Bulding By Ashraf Chowdury`}
+              loading="lazy"
+              className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[240px] sm:h-[280px] md:h-[320px] lg:h-[310px] xl:h-[330px] object-cover rounded cursor-pointer hover:scale-110 duration-500"
+            />
+          </div>
         </Link>
 
         <div

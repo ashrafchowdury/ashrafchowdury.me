@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Hydrate state={pageProps.dehydratedState}>
           <Layout>
             <Component {...pageProps} />
-                <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+            {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
           </Layout>
         </Hydrate>
       </QueryClientProvider>
