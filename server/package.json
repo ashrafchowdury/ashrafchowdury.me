@@ -10,10 +10,7 @@
     "start": "sanity start",
     "build": "sanity build"
   },
-  "api": {
-    "projectId": "wiev2jo5",
-    "dataset": "production"
-  },
+
   "keywords": [
     "sanity"
   ],
