@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb {
     @apply font-["Lexend_Deca"] scroll-smooth;
   }
   body {
-    @apply bg-[#F4F6FF] dark:bg-[#1B2430];
+    @apply bg-[#F4F6FF] dark:bg-[#1B2430] overflow-x-hidden;
   }
   body {
     @apply:: -webkit-scrollbar-thumb;

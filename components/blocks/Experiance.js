@@ -16,8 +16,8 @@ const Experiance = ({ data }) => {
           return (
             <React.Fragment key={value._id}>
               <PortableText
-                projectId={project_id}
-                dataset={project_dataset}
+                projectId="wiev2jo5"
+                dataset="production"
                 value={value.body}
               />
             </React.Fragment>

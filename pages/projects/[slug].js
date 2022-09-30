@@ -1,3 +1,4 @@
+import React from "react";
 import Button from "../../components/utilities/Button";
 import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
@@ -8,12 +9,14 @@ const slug = () => {
   return (
     <>
       {/* Main Image */}
-      <img
-        src={urlFor(data?.mainImage).url()}
-        alt="image"
-        className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
-        loading="lazy"
-      />
+      {data?.mainImage && (
+        <img
+          src={urlFor(data?.mainImage).url()}
+          alt="image"
+          className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
+          loading="lazy"
+        />
+      )}
 
       {/***************** Artical Section ************************/}
       <article className="blog w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px] mx-auto mb-16 lg:mb-24">
@@ -78,7 +81,7 @@ export async function getStaticPaths() {
   }));
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
