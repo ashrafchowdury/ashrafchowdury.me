@@ -50,6 +50,7 @@ const Bio = ({ author }) => {
                         toast.error("Resume is not ready right now")
                       }
                       target="_blank"
+                      download={value.resume}
                       className=" w-[100%] py-[10px] px-2 hover:text-white dark:hover:text-gray-700 duration-500"
                     >
                       <i className="fa-regular fa-file mr-1"></i> Get Resume

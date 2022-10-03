@@ -12,7 +12,7 @@ const Projects = ({ data }) => {
         }`}
       >
         <Link href={`/projects/${data.slug.current}`}>
-          <div data-aos="fade-left">
+          <div data-aos="zoom-in-up">
             <img
               src={urlFor(data.mainImage).url()}
               alt={data.title}
@@ -24,7 +24,7 @@ const Projects = ({ data }) => {
         </Link>
 
         <div
-          data-aos="fade-right"
+          data-aos="zoom-in-up"
           className={`w-[100%] lg:w-[55%]  ${
             data.direction ? "lg:mr-5 xl:mr-7" : " lg:ml-6 xl:ml-8"
           }`}

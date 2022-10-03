@@ -7,6 +7,7 @@ const Blog = ({ data }) => {
     <div
       key={data._id}
       className="rounded w-[100%] sm:w-[85%] md:w-[320px] lg:w-[400px] mx-3 lg:mx-4 my-2 lg:my-3 overflow-hidden cursor-pointer bg-white dark:bg-[#253345]"
+      data-aos="zoom-in-up"
     >
       <img
         src={urlFor(data.mainImage).url()}

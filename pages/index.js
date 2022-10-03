@@ -153,7 +153,6 @@ export default function Home() {
 
       <Heading title=" My Latest Article 🛰️" />
       <article
-        data-aos="zoom-in-up"
         className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline"
       >
         {blog?.map((value) => {

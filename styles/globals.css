@@ -23,9 +23,9 @@ body::-webkit-scrollbar-thumb {
   body {
     @apply bg-[#F4F6FF] dark:bg-[#1B2430] overflow-x-hidden;
   }
-  body {
+  /* body {
     @apply:: -webkit-scrollbar-thumb;
-  }
+  } */
   h1,
   li,
   h2,
