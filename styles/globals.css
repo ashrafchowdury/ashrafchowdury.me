@@ -41,11 +41,11 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @layer components {
-  .desktop_links a {
+  .desktop_links span {
     @apply dark:text-white mx-4 font-semibold cursor-pointer hover:scale-110 duration-500 inline-block;
   }
-  .mobile_links a {
-    @apply text-lg;
+  .mobile_links span {
+    @apply text-lg cursor-pointer;
   }
   /**/
   .icon_hover {

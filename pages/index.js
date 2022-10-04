@@ -111,8 +111,8 @@ export default function Home() {
       <Bio author={author} />
 
       {/********************************* Project  Section ********************************/}
-      <Heading title="My Coding Project ⚒️" style="mt-12" />
-      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-5">
+      <Heading title="My Coding Project ⚒️" style="mt-28 lg:mt-12" />
+      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-20">
         {project
           ?.filter((val) => val.project_id < 4)
           .map((value) => {
@@ -152,9 +152,7 @@ export default function Home() {
       <Experiance data={experiance} />
 
       <Heading title=" My Latest Article 🛰️" />
-      <article
-        className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline"
-      >
+      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
         {blog?.map((value) => {
           return (
             <React.Fragment key={value._id}>

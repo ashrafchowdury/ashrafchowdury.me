@@ -7,8 +7,8 @@ import imageUrlBuilder from "@sanity/image-url";
 
 //configure the backend
 export const config = {
-  projectId: "wiev2jo5",
-  dataset: "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET,
   apiVersion: "2021-10-21", // use a UTC date string
   useCdn: true, // `false` if you want to ensure fresh data
 };
