@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 //
 import Blog from "../components/blocks/Blog";
 import Bio from "../components/blocks/Bio";
@@ -6,7 +6,6 @@ import Projects from "../components/blocks/Projects";
 //
 import Button from "../components/utilities/Button";
 import Heading from "../components/utilities/Heading";
-import Tooltip from "../components/utilities/Tooltip";
 //
 import { dehydrate, QueryClient } from "react-query";
 import {
@@ -18,16 +17,10 @@ import {
 } from "../components/query/querys";
 import { fetchQuery } from "../components/query/fetchQuery";
 import { useQueryData } from "../components/query/useQueryData";
-//sanity
-import { urlFor } from "../sanity";
 //
-import Link from "next/link";
 import Language from "../components/blocks/Language";
 import Experiance from "../components/blocks/Experiance";
 import Head from "next/head";
-import { data } from "autoprefixer";
-// import AOS from "aos";
-// import 'aos/dist/aos.css';
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -35,10 +28,6 @@ export default function Home() {
   const { data: blog } = useQueryData("blog");
   const { data: language } = useQueryData("language");
   const { data: experiance } = useQueryData("experiance");
-
-  // useEffect(() => {
-  //   AOS.init({ duration: 2000 });
-  // }, []);
 
   return (
     <>
@@ -82,15 +71,13 @@ export default function Home() {
           );
         })}
 
-        <a
-          href="mailto:ashraf.chowdury@gmail.com"
-          target="_blank"
-          data-aos="fade-up"
-        >
-          <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
-            <i className="fa-solid fa-code-fork lg:mr-1"></i> Do You Want To
-            Work With Me?
-          </Button>
+        <a href="mailto:ashraf.chowdury@gmail.com" target="_blank">
+          <div data-aos="fade-up">
+            <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
+              <i className="fa-solid fa-code-fork lg:mr-1"></i> Do You Want To
+              Work With Me?
+            </Button>
+          </div>
         </a>
 
         <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] border-[#67c2f6] dark:border-white mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Button from "../../components/utilities/Button";
 import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
@@ -8,12 +9,15 @@ const slug = () => {
 
   return (
     <>
+    <Head>
+      <title>{data.title}</title>
+    </Head>
       {/* Main Image */}
       {data?.mainImage && (
         <img
           src={urlFor(data?.mainImage).url()}
           alt="image"
-          className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px]  md:h-[360px] lg:h-[550px] object-cover mx-auto rounded"
+          className="w-[90%] sm:w-[85%] md:w-[700px] lg:w-[1000px] xl:w-[1050px] md:h-[420px] lg:h-[600px] object-cover mx-auto rounded"
           loading="lazy"
         />
       )}

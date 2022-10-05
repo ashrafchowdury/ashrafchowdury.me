@@ -18,7 +18,7 @@ const Projects = ({ data }) => {
               alt={data.title}
               title={`This ${data.title} Bulding By Ashraf Chowdury`}
               loading="lazy"
-              className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[240px] sm:h-[280px] md:h-[320px] lg:h-[300px] xl:h-[330px] object-cover rounded cursor-pointer hover:scale-110 duration-500"
+              className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[220px] sm:h-[300px] md:h-[310px] lg:h-[280px] xl:h-[300px] object-cover rounded cursor-pointer hover:scale-110 duration-500"
             />
           </div>
         </Link>
@@ -46,7 +46,7 @@ const Projects = ({ data }) => {
           <div className=" flex flex-row items-center mt-8 xl:mt-12">
             <a href={data.gihub_link} target="_blank">
               <Button style=" py-[9px] px-6 xl:px-8 text-sm lg:text-[16px] font-bold">
-                <i className="fa-solid fa-code-compare mr-1"></i> View GitHub
+                <i className="fa-solid fa-code-compare mr-1"></i> View Repo
               </Button>
             </a>
             <a

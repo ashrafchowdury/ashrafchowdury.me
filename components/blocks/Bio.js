@@ -61,8 +61,8 @@ const Bio = ({ author }) => {
                       target="_blank"
                       className=" w-[100%] py-[10px] px-2 hover:text-white dark:hover:text-gray-700 duration-500"
                     >
-                      View More
-                      <i className="fa-solid fa-arrow-right-long ml-2"></i>
+                      <i className="fa-solid fa-code-compare mr-2"></i>
+                      View My Repo
                     </a>
                   </Button>
                 </div>
