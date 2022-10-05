@@ -71,15 +71,16 @@ export default function Home() {
           I am a front-end developer.
         </h2>
 
-        <p
-          data-aos="fade-down"
-          className="custom_text text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12"
-        >
-          I like to build 🏗️ excellent Web applications using Javascript and
-          React.js. Currently, I am focused on empowering myself by learning
-          some new technologies 👨‍💻 that will help me to better myself in my
-          future journey.
-        </p>
+        {author?.map((value) => {
+          return (
+            <p
+              data-aos="fade-down"
+              className="custom_text text-xs md:text-[16px] lg:text-lg md:w-11/12 lg:w-5/6 xl:w-[950px] md:mx-auto leading-7 md:leading-8 lg:leading-10 mb-7 md:mb-9 lg:mb-12"
+            >
+              {value.header_description}
+            </p>
+          );
+        })}
 
         <a
           href="mailto:ashraf.chowdury@gmail.com"
@@ -128,13 +129,7 @@ export default function Home() {
       <Heading title="My Ecosystem ♋" />
       <section>
         <div className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1200px] mx-auto flex flex-wrap justify-center">
-          {language?.map((value) => {
-            return (
-              <React.Fragment key={value._id}>
-                <Language data={value} />
-              </React.Fragment>
-            );
-          })}
+          <Language data={language} />
         </div>
         <a href="mailto:ashraf.chowdury@gmail.com" target="_blank">
           <Button style=" text-sm md:text-[16px] py-[7px] px-8 md:py-[10px] md:px-10 block mx-auto mt-[40px] md:mt-[60px]">

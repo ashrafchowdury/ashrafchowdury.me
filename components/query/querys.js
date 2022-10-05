@@ -3,6 +3,7 @@ export const authorQuery = `*[_type == "author"]{
     _id,
     title,
     mainImage,
+    header_description,
     main_description,
     sub_description,
     github_link,
@@ -25,6 +26,7 @@ export const blogQuery = `*[_type == "blog"]{
 //Language Query
 export const languageQuery = `*[_type == "language"]{
     _id,
+    id,
     name,
     tooltip,
     mainImage,
