@@ -14,6 +14,11 @@ export default {
       type: "string",
     },
     {
+      name: "id",
+      title: "Id",
+      type: "number",
+    },
+    {
       name: "mainImage",
       title: "Main image",
       type: "image",

@@ -23,6 +23,11 @@ export default {
       type: "string",
     },
     {
+      name: "header_description",
+      title: "Header_description",
+      type: "string",
+    },
+    {
       name: "main_description",
       title: "Main_description",
       type: "string",
