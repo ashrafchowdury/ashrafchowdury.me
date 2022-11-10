@@ -45,7 +45,7 @@ const Projects = ({ data }) => {
             })}
           </div>
           <div className=" flex flex-row items-center mt-8 xl:mt-12">
-            <a href={data.gihub_link} target="_blank">
+            <a href={data.github_link} target="_blank">
               <Button style=" py-[9px] px-6 xl:px-8 text-sm lg:text-[16px] font-bold">
                 <i className="fa-solid fa-code-compare mr-1"></i> View Repo
               </Button>
