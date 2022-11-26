@@ -32,6 +32,21 @@ export default function Document() {
           name="description"
           content="Hi, My name is Ashraf Chowdury and I am a Front-End Developer. I like to build excellent Web applications using Javascript and React.js. Currently, I am focused on empowering myself by learning some new technologies that will help me to better myself in my future journey."
         />
+        {/**************** Meta tags for social medias **********/}
+        <meta
+          property="og:title"
+          content="Ashraf Chowdury Portfolio | Front-End Developer"
+        />
+        <meta
+          property="og:description"
+          content="Hi, My name is Ashraf Chowdury and I am a Front-End Developer. I like to build excellent Web applications using Javascript and React.js. Currently, I am focused on empowering myself by learning some new technologies that will help me to better myself in my future journey."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ashrafchowdury.vercel.app/" />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/next-firebase-857d1.appspot.com/o/ashrafchowdury.png?alt=media&token=dd7825be-fcb3-435c-9c02-d1c288269d04"
+        />
 
         {/**************** Googles Search **********/}
         <meta

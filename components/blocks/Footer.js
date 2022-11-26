@@ -15,7 +15,7 @@ export class Footer extends Component {
               Want me building stuff for you? Hit me on Linkedin
             </p>
             <a
-              href="https://www.linkedin.com/in/ashraf-chowdury-297301206/"
+              href="https://www.linkedin.com/in/ashrafchowdury/"
               target="_blank"
             >
               <Button style=" py-2 px-8 text-sm md:text-[16px] xl:text-xl font-bold">
