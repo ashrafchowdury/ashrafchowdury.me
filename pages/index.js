@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 //
 import Blog from "../components/blocks/Blog";
 import Bio from "../components/blocks/Bio";
@@ -28,6 +28,22 @@ export default function Home() {
   const { data: blog } = useQueryData("blog");
   const { data: language } = useQueryData("language");
   const { data: experiance } = useQueryData("experiance");
+  const [sortProject, setsortProject] = useState([]);
+
+  useEffect(() => {
+    //store the project datas Id
+    let data_id = [];
+    //find id & store in data_id
+    const find_id = project.map((val) => data_id.push(val.project_id));
+    //sort data_id
+    const sort_data_id = data_id.sort((a, b) => a - b);
+
+    //sort the actual data by the help of sort_data_id
+    const order_rize_data = sort_data_id.map((id) =>
+      project.find((value) => value.project_id == id)
+    );
+    setsortProject(order_rize_data);
+  }, []);
 
   return (
     <>
@@ -101,7 +117,7 @@ export default function Home() {
       {/********************************* Project  Section ********************************/}
       <Heading title="My Coding Project ⚒️" style="mt-28 lg:mt-12" />
       <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-20">
-        {project
+        {sortProject
           ?.filter((val) => val.project_id < 4)
           .map((value) => {
             return (
