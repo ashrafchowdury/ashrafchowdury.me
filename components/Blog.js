@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../utilities/Button";
-import { urlFor } from "../../sanity";
+import Button from "../utils/components/Button";
+import { urlFor } from "../sanity";
 
 const Blog = ({ data }) => {
   return (

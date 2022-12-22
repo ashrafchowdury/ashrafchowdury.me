@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Button from "../../components/utilities/Button";
+import Button from "../../utils/components/Button";
 import { sanityClient, urlFor } from "../../sanity";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Heading from "../../components/utilities/Heading";
-import Projects from "../../components/blocks/Projects";
+import Heading from "../../utils/components/Heading";
+import Projects from "../../components/Projects";
 import { dehydrate, QueryClient } from "react-query";
-import { projectQuery } from "../../components/query/querys";
-import { fetchQuery } from "../../components/query/fetchQuery";
-import { useQueryData } from "../../components/query/useQueryData";
+import { projectQuery } from "../../utils/components/querys";
+import { fetchQuery } from "../../utils/functions/fetchQuery";
+import { useQueryData } from "../../utils/hooks/useQueryData";
 
 const projects = () => {
   const { data } = useQueryData("project");

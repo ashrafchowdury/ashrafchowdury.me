@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "../utilities/Heading";
+import Heading from "../utils/components/Heading";
 import { PortableText } from "@portabletext/react";
 
 const Experiance = ({ data }) => {

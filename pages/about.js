@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Bio from "../components/blocks/Bio";
-import Heading from "../components/utilities/Heading";
-import Experiance from "../components/blocks/Experiance";
+import Author from "../components/Author";
+import Heading from "../utils/components/Heading";
+import Experiance from "../components/Experiance";
 import { dehydrate, QueryClient } from "react-query";
-import { authorQuery, experianceQuery } from "../components/query/querys";
-import { fetchQuery } from "../components/query/fetchQuery";
-import { useQueryData } from "../components/query/useQueryData";
+import { authorQuery, experianceQuery } from "../utils/components/querys";
+import { fetchQuery } from "../utils/functions/fetchQuery";
+import { useQueryData } from "../utils/hooks/useQueryData";
 
 const about = () => {
   const { data: author } = useQueryData("author");
@@ -16,7 +16,7 @@ const about = () => {
         <title> About Ashraf Chowdury </title>
       </Head>
       <Heading title="About Me 🧑" style=" lg:!mt-16" />
-      <Bio author={author} />
+      <Author author={author} />
       <Experiance data={experiance} />
     </>
   );

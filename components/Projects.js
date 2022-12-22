@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Button from "../utilities/Button";
-import { urlFor } from "../../sanity";
+import Button from "../utils/components/Button";
+import { urlFor } from "../sanity";
 import { toast } from "react-hot-toast";
 
 const Projects = ({ data }) => {

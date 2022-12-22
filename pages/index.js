@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 //
-import Blog from "../components/blocks/Blog";
-import Bio from "../components/blocks/Bio";
-import Projects from "../components/blocks/Projects";
+import Blog from "../components/Blog";
+import Author from "../components/Author";
+import Projects from "../components/Projects";
+import Language from "../components/Language";
+import Experiance from "../components/Experiance";
 //
-import Button from "../components/utilities/Button";
-import Heading from "../components/utilities/Heading";
+import Button from "../utils/components/Button";
+import Heading from "../utils/components/Heading";
 //
 import { dehydrate, QueryClient } from "react-query";
 import {
@@ -14,13 +17,11 @@ import {
   languageQuery,
   projectQuery,
   experianceQuery,
-} from "../components/query/querys";
-import { fetchQuery } from "../components/query/fetchQuery";
-import { useQueryData } from "../components/query/useQueryData";
-//
-import Language from "../components/blocks/Language";
-import Experiance from "../components/blocks/Experiance";
-import Head from "next/head";
+} from "../utils/components/querys";
+import { fetchQuery } from "../utils/functions/fetchQuery";
+import { useQueryData } from "../utils/hooks/useQueryData";
+
+
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -55,7 +56,6 @@ export default function Home() {
         />
       </Head>
       {/********* Header Section ************/}
-
       <header className="header_animate w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-8 xl:mt-14 lg:mb-24">
         <p
           data-aos="fade-down"
@@ -111,8 +111,8 @@ export default function Home() {
         </p>
       </article>
 
-      {/**************************** Author Bio Section **********************************/}
-      <Bio author={author} />
+      {/**************************** Author Author Section **********************************/}
+      <Author author={author} />
 
       {/********************************* Project  Section ********************************/}
       <Heading title="My Coding Project ⚒️" style="mt-28 lg:mt-12" />

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Button from "../components/utilities/Button";
+import Button from "../utils/components/Button";
 
 //Error Page
 const CustomError = () => {

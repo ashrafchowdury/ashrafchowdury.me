@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { urlFor } from "../../sanity";
+import { urlFor } from "../sanity";
 
 const Language = ({ data }) => {
   const [sortData, setsortData] = useState([]);

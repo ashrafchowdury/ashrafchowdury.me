@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../utilities/Button";
-import { urlFor } from "../../sanity";
+import Button from "../utils/components/Button";
+import { urlFor } from "../sanity";
 import { Toaster, toast } from "react-hot-toast";
 
 const Bio = ({ author }) => {
@@ -18,7 +18,7 @@ const Bio = ({ author }) => {
                 src={urlFor(value.mainImage).url()}
                 alt="Ashraf Chowdury"
                 title="Ashraf Chowdury"
-                className="shadow-lg w-[90%] sm:w-[80%] md:w-[75%] lg:w-[350px] xl:w-[420px] md:h-[420px] xl:h-[480px] object-cover rounded-full md:rounded"
+                className="shadow-lg w-[90%] sm:w-[80%] md:w-[75%] lg:w-[350px] xl:w-[420px] md:h-[420px] xl:h-[480px] object-cover rounded"
                 loading="lazy"
               />
               <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[620px] text-center md:text-start lg:ml-7 xl:ml-9">
@@ -75,28 +75,3 @@ const Bio = ({ author }) => {
 };
 
 export default Bio;
-
-// //get the blog posts with server side rendering
-// export const getServerSideProps = async () => {
-//   //blog query
-//   const authorQuery = `*[_type == "author"]{
-//     _id,
-//     title,
-//     mainImage,
-//     main_description,
-//     github_link,
-//     resume,
-//     current_stack[] -> {
-//       title,
-//      },
-//   }`;
-//   //call api
-//   const author = await sanityClient.fetch(authorQuery);
-
-//   //send the data to home page
-//   return {
-//     props: {
-//       author,
-//     },
-//   };
-// };

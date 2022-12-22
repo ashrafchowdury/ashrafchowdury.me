@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Button from "../utilities/Button";
+import Button from "../utils/components/Button";
 const Message = () => {
   const [icon, seticon] = useState(false);
-  //bg-[#1B2430]
   const handleEmailSubmit = () => {
     seticon(false);
   };

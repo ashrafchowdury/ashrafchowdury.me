@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../utilities/Button";
+import Button from "../utils/components/Button";
 export class Footer extends Component {
   render() {
     return (

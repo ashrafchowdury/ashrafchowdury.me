@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-// import DataContextProvider from "../data";
 import { QueryClient, QueryClientProvider, Hydrate } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 //initilize the Query

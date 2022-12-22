@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Nav from "./blocks/Nav";
-import Footer from "./blocks/Footer";
+import Nav from "./Nav";
+import Footer from "./Footer";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
