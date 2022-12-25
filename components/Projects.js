@@ -30,7 +30,7 @@ const Projects = ({ data }) => {
             data.direction ? "lg:mr-5 xl:mr-7" : " lg:ml-6 xl:ml-8"
           }`}
         >
-          <h4 className=" dark:text-white text-xl lg:text-3xl xl:text-[36px] my-2 xl:mb-3 font-bold">
+          <h4 className=" dark:text-light text-xl lg:text-3xl xl:text-[36px] my-2 xl:mb-3 font-bold">
             {data.title}
           </h4>
           <p className=" text-sm md:text-[16px] xl:text-lg leading-7 md:leading-8 lg:leading-8 xl:leading-9 break-all h-[92px] xl:h-auto overflow-hidden xl:overflow-visible ">
@@ -41,7 +41,11 @@ const Projects = ({ data }) => {
           </p>
           <div className="current_stack w-full flex flex-wrap">
             {data.categories.map((stack, ind) => {
-              return <span key={ind}>{stack.title}</span>;
+              return (
+                <span key={ind} className=" !bg-hLight dark:!bg-hDark">
+                  {stack.title}
+                </span>
+              );
             })}
           </div>
           <div className=" flex flex-row items-center mt-8 xl:mt-12">

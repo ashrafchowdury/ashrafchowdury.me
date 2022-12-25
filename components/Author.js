@@ -38,7 +38,11 @@ const Bio = ({ author }) => {
                 </p>
                 <div className="current_stack w-full flex flex-wrap justify-center md:justify-start">
                   {value.current_stack.map((stack, ind) => {
-                    return <span key={ind}>{stack.title}</span>;
+                    return (
+                      <span key={ind} className=" !bg-hLight dark:!bg-hDark">
+                        {stack.title}
+                      </span>
+                    );
                   })}
                 </div>
                 <div className=" flex flex-col mt-6">
@@ -50,7 +54,7 @@ const Bio = ({ author }) => {
                         toast.error("Resume is not ready right now")
                       }
                       target="_blank"
-                      className=" w-[100%] py-[10px] px-2 hover:text-white dark:hover:text-gray-700 duration-500"
+                      className=" w-[100%] py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500"
                     >
                       <i className="fa-regular fa-file mr-1"></i> Get Resume
                     </a>{" "}
@@ -58,7 +62,7 @@ const Bio = ({ author }) => {
                     <a
                       href={value.github_link}
                       target="_blank"
-                      className=" w-[100%] py-[10px] px-2 hover:text-white dark:hover:text-gray-700 duration-500"
+                      className=" w-[100%] py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500"
                     >
                       <i className="fa-solid fa-code-compare mr-2"></i>
                       View My Repo

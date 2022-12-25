@@ -69,7 +69,7 @@ const Nav = () => {
               className="icon_hover lg:ml-4 py-[5px] px-[10px]"
               onClick={() => handleLightTheme()}
             >
-              <i className="fa-regular fa-sun text-lg md:text-xl dark:text-white"></i>
+              <i className="fa-regular fa-sun text-lg md:text-xl dark:text-light"></i>
             </span>
           ) : (
             <span
@@ -78,14 +78,14 @@ const Nav = () => {
               className="icon_hover lg:ml-4 py-[3px] px-[8px] lg:py-[6px] lg:px-[10px]"
               onClick={() => handleDarkTheme()}
             >
-              <i className="fa-regular fa-moon text-lg md:text-xl dark:text-white"></i>
+              <i className="fa-regular fa-moon text-lg md:text-xl dark:text-light"></i>
             </span>
           )}
         </section>
 
         {/************ Mobile Me nu Icon ***********/}
         <span
-          className="icon_hover py-[4px] px-[10px] text-xl ml-2 md:ml-4 lg:hidden dark:text-white"
+          className="icon_hover py-[4px] px-[10px] text-xl ml-2 md:ml-4 lg:hidden dark:text-light"
           onClick={() => setmenu("block")}
         >
           <i className="fa-solid fa-bars"></i>
@@ -94,7 +94,7 @@ const Nav = () => {
 
       {/*********************** Mobile Menu Section***************************/}
       <section
-        className={`${menu} duration-700 fixed lg:hidden left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-30 w-[90%] sm:w-[85%] md:w-[70%] h-[90vh] md:h-[80vh] rounded-md bg-white dark:bg-[#253345] flex flex-col`}
+        className={`${menu} duration-700 fixed lg:hidden left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-30 w-[90%] sm:w-[85%] md:w-[70%] h-[90vh] md:h-[80vh] rounded-md bg-light dark:bg-hDark flex flex-col`}
       >
         <div className=" w-[80%] mx-auto flex justify-between items-center mt-10">
           <h1 className=" font-['Sacramento'] text-xl md:text-2xl font-bold lg:hidden">
@@ -102,14 +102,14 @@ const Nav = () => {
           </h1>
           <span className="icon_hover py-[2px] px-[9px] md:px-[11px] lg:hidden">
             <i
-              className="fa-solid fa-xmark text-2xl dark:text-white"
+              className="fa-solid fa-xmark text-2xl dark:text-light"
               onClick={() => setmenu("hidden")}
             ></i>
           </span>
         </div>
 
         <Links
-          style="mobile_links w-[80%] mx-auto flex flex-col space-y-10 mt-10 dark:text-white"
+          style="mobile_links w-[80%] mx-auto flex flex-col space-y-10 mt-10 dark:text-light"
           setmenu={setmenu}
         />
       </section>

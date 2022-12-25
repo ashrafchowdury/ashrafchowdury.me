@@ -20,8 +20,7 @@ import {
 } from "../utils/components/querys";
 import { fetchQuery } from "../utils/functions/fetchQuery";
 import { useQueryData } from "../utils/hooks/useQueryData";
-
-
+import Message from "../components/Message";
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -96,12 +95,12 @@ export default function Home() {
           </div>
         </a>
 
-        <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] border-[#67c2f6] dark:border-white mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
-          <div className="dot_animation w-2 h-2 rounded-full bg-[#67c2f6] dark:bg-white m-auto"></div>
+        <div className="w-6 h-10 lg:w-7 lg:h-12 rounded-full border-[3px] border-primary dark:border-light mx-auto mt-8 lg:mt-12 pt-2 lg:pt-4 cursor-pointer overflow-hidden">
+          <div className="dot_animation w-2 h-2 rounded-full bg-primary dark:bg-light m-auto"></div>
         </div>
       </header>
 
-      <article className="w-full h-48 md:h-[250px] lg:h-[300px] my-10 bg-white dark:bg-[#253345] flex justify-center items-center">
+      <article className="w-full h-48 md:h-[250px] lg:h-[300px] my-10 bg-hLight dark:bg-hDark flex justify-center items-center">
         <p className=" md:text-xl lg:text-2xl lg:leading-[45px] font-light text-center capitalize">
           <span className=" text-xl md:text-2xl lg:text-3xl">“</span>
           <span className="text-xl md:text-2xl lg:text-3xl font-medium">S</span>
@@ -142,7 +141,7 @@ export default function Home() {
       </section>
 
       {/********************************* A Linke between Exprerinace and Language ********************************/}
-      <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 lg:my-28 bg-white dark:bg-[#253345]">
+      <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 lg:my-28 bg-light dark:bg-[#253345]">
         {" "}
       </div>
 
@@ -150,7 +149,7 @@ export default function Home() {
       <Experiance data={experiance} />
 
       <Heading title=" My Latest Article 🛰️" />
-      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-8 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
+      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-40 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
         {blog?.map((value) => {
           return (
             <React.Fragment key={value._id}>
@@ -159,6 +158,9 @@ export default function Home() {
           );
         })}
       </article>
+
+      <Heading title="Contact Me 📧" />
+      <Message />
     </>
   );
 }

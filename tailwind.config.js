@@ -9,18 +9,18 @@ module.exports = {
     extend: {
       screens: {
         sm: "500px",
-        // => @media (min-width: 640px) { ... }
-
         md: "720px",
-        // => @media (min-width: 768px) { ... }
-
         lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
         xl: "1450px",
-        // => @media (min-width: 1280px) { ... }
+      },
+      colors: {
+        primary: "#3794E3",
+        hLight: "#E0E0E0",
+        dark: "#1B2430",
+        light: "#FFFFFF",
+        hDark: "#253345",
       },
     },
   },
   plugins: [],
-}
+};

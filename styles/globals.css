@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb {
     @apply font-["Lexend_Deca"] scroll-smooth;
   }
   body {
-    @apply bg-[#F4F6FF] dark:bg-[#1B2430] overflow-x-hidden;
+    @apply bg-light dark:bg-dark overflow-x-hidden;
   }
   /* body {
     @apply:: -webkit-scrollbar-thumb;
@@ -33,31 +33,31 @@ body::-webkit-scrollbar-thumb {
   h4,
   h5,
   h6 {
-    @apply text-gray-700 dark:text-white;
+    @apply text-gray-700 dark:text-light;
   }
   p,
   a {
-    @apply text-gray-800 dark:text-white;
+    @apply text-gray-800 dark:text-light;
   }
 }
 @layer components {
   .desktop_links span {
-    @apply dark:text-white mx-4 font-semibold cursor-pointer hover:scale-110 duration-500 inline-block;
+    @apply dark:text-light mx-4 font-semibold cursor-pointer hover:scale-110 duration-500 inline-block;
   }
   .mobile_links span {
     @apply text-lg cursor-pointer;
   }
   /**/
   .icon_hover {
-    @apply rounded-full hover:bg-[#3792E4] hover:text-white duration-500 cursor-pointer;
+    @apply rounded-full hover:bg-primary hover:text-light duration-500 cursor-pointer;
   }
   /**/
   .current_stack span {
-    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-white dark:bg-[#253345] dark:text-white my-2 mr-2 xl:mr-[10px];
+    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-light dark:bg-hDark dark:text-light my-2 mr-2 xl:mr-[10px];
   }
   /**/
   .social_links a {
-    @apply md:text-lg lg:text-xl py-[8px] lg:py-[10px] px-[11px] lg:px-[13px] rounded-full mx-2 xl:mx-3 bg-white dark:bg-[#253345];
+    @apply md:text-lg lg:text-xl py-[8px] lg:py-[10px] px-[11px] lg:px-[13px] rounded-full mx-2 xl:mx-3 bg-light dark:bg-hDark;
   }
   /**/
   .blog p {

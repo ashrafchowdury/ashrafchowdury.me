@@ -5,7 +5,7 @@ export class Footer extends Component {
     return (
       <>
         {/********************************* A Linke between Exprerinace and Language ********************************/}
-        <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 bg-white dark:bg-[#253345]">
+        <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 bg-light dark:bg-hDark">
           {" "}
         </div>
 
