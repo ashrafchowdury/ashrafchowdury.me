@@ -29,15 +29,11 @@ export default {
         { title: "Quote", value: "blockquote" },
       ],
       lists: [{ title: "Bullet", value: "bullet" }],
-      // Marks let you mark up inline text in the block editor.
       marks: {
-        // Decorators usually describe a single property – e.g. a typographic
-        // preference or highlighting by editors.
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
         ],
-        // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
             title: "URL",
@@ -54,12 +50,17 @@ export default {
         ],
       },
     },
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
     {
       type: "image",
       options: { hotspot: true },
+    },
+    {
+      name: "code",
+      title: "Code block",
+      type: "code",
+      options: {
+        theme: "solarized_dark",
+      },
     },
   ],
 };

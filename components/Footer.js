@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Button from "../utils/components/Button";
+import Buttons from "../utils/components/Buttons";
+import { FaTwitter, FaGithub } from "react-icons/fa";
+
 export class Footer extends Component {
   render() {
     return (
@@ -18,22 +20,36 @@ export class Footer extends Component {
               href="https://www.linkedin.com/in/ashrafchowdury/"
               target="_blank"
             >
-              <Button style=" py-2 px-8 text-sm md:text-[16px] xl:text-xl font-bold">
-                <i className="fa-brands fa-linkedin-in mr-1"></i> Linkedin
-              </Button>
+              <Buttons style=" py-2 md:py-[10px] px-8 text-sm md:text-[16px] xl:text-xl font-bold">
+                LinkedIn
+              </Buttons>
             </a>
           </div>
 
-          <p className="text-lg md:text-xxl lg:text-2xl xl:text-3xl font-blod mt-12 md:mt-16 mb-7 md:mb-9">
-            If you want to know more about Follow me{" "}
+          <p className=" md:text-xl mt-16 mb-8">Follow Me On</p>
+          <div className=" flex space-x-5 items-center justify-center">
             <a
               href="https://twitter.com/Ashraf_365"
               target="_blank"
-              className=" underline"
+              className=" hover:scale-110 duration-300"
             >
-              #️⃣ Twitter
+              <FaTwitter className=" text-2xl md:text-4xl text-primary" />
             </a>
-          </p>
+            <a
+              href="https://github.com/ashrafchowdury"
+              target="_blank"
+              className="hover:scale-110 duration-300"
+            >
+              <FaGithub className=" text-2xl md:text-4xl text-dark dark:text-light" />
+            </a>
+            <a
+              href="https://ashrafchowdury09.hashnode.dev/"
+              target="_blank"
+              className=" w-[30px] md:w-[40px] hover:scale-110 duration-300"
+            >
+              <img src="https://img.icons8.com/color/48/null/hashnode.png" />
+            </a>
+          </div>
         </footer>
       </>
     );

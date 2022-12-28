@@ -1,12 +1,13 @@
 import React from "react";
-import Button from "../utils/components/Button";
+import Buttons from "../utils/components/Buttons";
 import { urlFor } from "../sanity";
+import { FaArrowRight } from "react-icons/fa";
 
 const Blog = ({ data }) => {
   return (
     <div
       key={data._id}
-      className="rounded w-[100%] sm:w-[85%] md:w-[320px] lg:w-[400px] mx-3 lg:mx-4 my-2 lg:my-3 overflow-hidden cursor-pointer bg-hLight dark:bg-hDark"
+      className="rounded-lg w-[100%] sm:w-[85%] md:w-[320px] lg:w-[400px] mx-3 lg:mx-4 my-2 lg:my-3 overflow-hidden cursor-pointer bg-hLight dark:bg-hDark"
       data-aos="zoom-in-up"
     >
       <img
@@ -30,10 +31,9 @@ const Blog = ({ data }) => {
           target="_blank"
           className=" mb-5 block mt-6 md:mt-7"
         >
-          <Button style="w-full text-sm py-[5px] md:py-2">
-            Read Full Article{" "}
-            <i className="fa-solid fa-arrow-right-long ml-1"></i>
-          </Button>
+          <Buttons style="w-full text-sm py-[7px] md:py-[10px]">
+            Read Full Article <FaArrowRight className=" ml-4" />
+          </Buttons>
         </a>
       </div>
     </div>

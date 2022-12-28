@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { BiSun, BiMenuAltRight } from "react-icons/bi";
+import { FaRegMoon, FaTimes } from "react-icons/fa";
 
 const Nav = () => {
   //use for change the theme
@@ -63,33 +65,31 @@ const Nav = () => {
           {/************************ Condition for show the theme icon ***************************/}
           {/** if theme equal to dark then show sun icon other vise show the moon icon **/}
           {mood == "dark" ? (
-            <span
-              title="Light Mood"
+            <button
               id="themeSun"
-              className="icon_hover lg:ml-4 py-[5px] px-[10px]"
+              className="lg:ml-4 py-[8px] px-[8px] focus:ring-2 ring-primary hover:bg-hDark duration-500 rounded-lg"
               onClick={() => handleLightTheme()}
             >
-              <i className="fa-regular fa-sun text-lg md:text-xl dark:text-light"></i>
-            </span>
+              <BiSun className=" text-xl md:text-2xl dark:text-light" />
+            </button>
           ) : (
-            <span
-              title="Dark Mood"
+            <button
               id="themeMoon"
-              className="icon_hover lg:ml-4 py-[3px] px-[8px] lg:py-[6px] lg:px-[10px]"
+              className="lg:ml-4 py-[8px] px-[8px] focus:ring-2 ring-primary hover:bg-hLight dark:hover:bg-hDark duration-500 rounded-lg"
               onClick={() => handleDarkTheme()}
             >
-              <i className="fa-regular fa-moon text-lg md:text-xl dark:text-light"></i>
-            </span>
+              <FaRegMoon className=" text-xl lg:text-2xl dark:text-light" />
+            </button>
           )}
         </section>
 
         {/************ Mobile Me nu Icon ***********/}
-        <span
-          className="icon_hover py-[4px] px-[10px] text-xl ml-2 md:ml-4 lg:hidden dark:text-light"
+        <button
+          className=" ml-3 py-[6px] px-[6px] focus:ring-2 ring-primary hover:bg-hLight dark:hover:bg-hDark duration-500 rounded-lg lg:hidden"
           onClick={() => setmenu("block")}
         >
-          <i className="fa-solid fa-bars"></i>
-        </span>
+          <BiMenuAltRight className=" text-[26px] text-dark dark:text-light" />
+        </button>
       </div>
 
       {/*********************** Mobile Menu Section***************************/}
@@ -100,12 +100,13 @@ const Nav = () => {
           <h1 className=" font-['Sacramento'] text-xl md:text-2xl font-bold lg:hidden">
             Ashraf Chowdury
           </h1>
-          <span className="icon_hover py-[2px] px-[9px] md:px-[11px] lg:hidden">
-            <i
-              className="fa-solid fa-xmark text-2xl dark:text-light"
-              onClick={() => setmenu("hidden")}
-            ></i>
-          </span>
+
+          <button
+            className="lg:ml-4 py-[8px] px-[8px] focus:ring-2 ring-primary hover:bg-hLight dark:hover:bg-dark duration-500 rounded-lg"
+            onClick={() => setmenu("hidden")}
+          >
+            <FaTimes className=" text-xl lg:text-2xl dark:text-light" />
+          </button>
         </div>
 
         <Links

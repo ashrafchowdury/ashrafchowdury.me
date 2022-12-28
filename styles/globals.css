@@ -12,7 +12,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255);
   background: linear-gradient(30deg, #516cd5 4.25%, #67c2f6 100%);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /************ Normal elements styles *************/
@@ -23,9 +23,7 @@ body::-webkit-scrollbar-thumb {
   body {
     @apply bg-light dark:bg-dark overflow-x-hidden;
   }
-  /* body {
-    @apply:: -webkit-scrollbar-thumb;
-  } */
+
   h1,
   li,
   h2,
@@ -53,7 +51,7 @@ body::-webkit-scrollbar-thumb {
   }
   /**/
   .current_stack span {
-    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[6px] px-3 lg:px-4 xl:px-6 rounded-full bg-light dark:bg-hDark dark:text-light my-2 mr-2 xl:mr-[10px];
+    @apply text-xs lg:text-sm xl:text-[16px] font-bold py-[7px] px-3 lg:px-4 xl:px-6 rounded-lg bg-hLight dark:bg-hDark dark:text-light my-2 mr-2 xl:mr-[10px];
   }
   /**/
   .social_links a {
@@ -73,43 +71,78 @@ body::-webkit-scrollbar-thumb {
   .experiance p {
     @apply text-sm md:text-[16px] lg:text-lg leading-6;
   }
+
+  /***Header Gradiant***/
+  .gradiant_text {
+    background: linear-gradient(90deg, #3792e4 0.7%, #31cabd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  /***Tooltip***/
+  .tooltip {
+    position: relative;
+  }
+  .tooltip span {
+    /* visibility: hidden; */
+    position: absolute;
+    z-index: -3;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    border-radius: 8px;
+    transition: opacity 0.9s;
+  }
+  .tooltip span::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #3792e4 transparent transparent transparent;
+  }
+  .tooltip:hover span {
+    z-index: 3;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
-.gradiant_text {
-  background: linear-gradient(90deg, #3792e4 0.7%, #31cabd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
+/************************ This is for the Blog Detaile Page **************************/
+@layer components {
+  .code {
+    @apply bg-[#253345] text-white text-sm md:text-[16px] lg:text-[18px] lg:leading-[30px] rounded-lg px-6 lg:px-8 py-5 lg:py-6 w-full my-4 cursor-pointer;
+  }
+  .detaile h1 {
+    @apply hidden;
+  }
+  .detaile h2 {
+    @apply text-xl md:text-3xl lg:text-4xl font-bold break-all mb-2 lg:mb-10 mt-8 md:mt-10 lg:mt-20;
+  }
+  .detaile h3 {
+    @apply text-lg md:text-2xl lg:text-3xl font-bold mb-2 lg:mb-3 mt-8 md:mt-10 lg:mt-12 break-all;
+  }
+  .detaile p {
+    @apply text-sm lg:text-[18px] lg:w-[90%] leading-6 lg:leading-8 my-3 break-all;
+  }
+  .detaile ul {
+    @apply mt-4 mb-7 md:mb-9 lg:mb-10;
+  }
+  .detaile li {
+    @apply text-sm md:text-[16px] lg:text-[18px] list-disc list-inside my-3 md:my-5 lg:my-5;
+  }
+  .detaile img {
+    @apply w-full md:w-[450px] lg:w-[750px] rounded;
+  }
 
-.tooltip {
-  position: relative;
-}
-.tooltip span {
-  /* visibility: hidden; */
-  position: absolute;
-  z-index: -3;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.9s;
-}
-.tooltip span::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: #3792e4 transparent transparent transparent;
-}
-.tooltip:hover span {
-  z-index: 3;
-  visibility: visible;
-  opacity: 1;
+  .blog code {
+    @apply rounded w-full h-16 md:w-[450px] lg:w-[750px] bg-gray-600;
+  }
 }
 
 @keyframes dot {
@@ -122,4 +155,39 @@ body::-webkit-scrollbar-thumb {
 }
 .dot_animation {
   animation: dot 0.6s ease 2s infinite alternate;
+}
+
+.heading {
+  --bg-size: 200%;
+  --color-one: #3792e4;
+  --color-two: #31cabd;
+  --color-three: #f43b60;
+  background: linear-gradient(
+      60deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one),
+      var(--color-three),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 15s infinite linear;
+}
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boujee-text {
+    animation: move-bg 15s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
 }

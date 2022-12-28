@@ -1,11 +1,9 @@
 import React from "react";
-import Heading from "../utils/components/Heading";
 import { PortableText } from "@portabletext/react";
 
 const Experiance = ({ data }) => {
   return (
     <>
-      <Heading title="Experience 🏹" />
       <section
         data-aos="fade-right"
         className="experiance w-[90%] md:w-[550px] lg:w-[750px] text-center mx-auto mb-28 lg:mb-44"

@@ -4,17 +4,21 @@
     "name": "portfolio"
   },
   "api": {
-    "dataset": "production"
+    "dataset": "production",
+    "projectId": "wiev2jo5"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

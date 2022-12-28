@@ -5,7 +5,7 @@ const Tooltip = ({ children }) => {
   return (
     <div className="tooltip">
       {children}
-      <span>Hello world</span>
+      <span></span>
     </div>
   );
 };

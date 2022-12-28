@@ -23,7 +23,7 @@ const Language = ({ data }) => {
         return (
           <div
             key={value._id}
-            className="tooltip bg-hLight dark:bg-hDark flex items-center py-[8px] lg:py-[12px] px-[14px] lg:px-[20px] xl:px-[26px] m-[5px] md:m-[10px] rounded cursor-pointer"
+            className="tooltip bg-hLight dark:bg-hDark flex items-center py-[8px] lg:py-[12px] pl-[14px] pr-[20px] m-[7px] md:m-[12px] rounded-xl cursor-pointer"
             data-aos="zoom-in"
           >
             <span className=" text-xs md:text-sm lg:text-[16px] font-medium text-center w-full py-[6px] md:py-2 px-3 md:px-5 rounded bg-primary text-light">
@@ -33,9 +33,9 @@ const Language = ({ data }) => {
               src={urlFor(value.mainImage).url()}
               alt={value.name}
               loading="lazy"
-              className=" w-[20px] md:w-[28px] lg:w-[40px] mr-2 lg:mr-3"
+              className=" w-[20px] md:w-[28px] lg:w-[40px] mr-2 lg:mr-4"
             />
-            <p className=" text-sm md:text-[16px] lg:w-xl font-bold">
+            <p className=" text-sm md:text-[16px] lg:text-xl font-bold">
               {value.name}
             </p>
           </div>

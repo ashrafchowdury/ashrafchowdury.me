@@ -7,7 +7,7 @@ import Projects from "../components/Projects";
 import Language from "../components/Language";
 import Experiance from "../components/Experiance";
 //
-import Button from "../utils/components/Button";
+import Buttons from "../utils/components/Buttons";
 import Heading from "../utils/components/Heading";
 //
 import { dehydrate, QueryClient } from "react-query";
@@ -21,6 +21,7 @@ import {
 import { fetchQuery } from "../utils/functions/fetchQuery";
 import { useQueryData } from "../utils/hooks/useQueryData";
 import Message from "../components/Message";
+import { BiMailSend } from "react-icons/bi";
 
 export default function Home() {
   const { data: project } = useQueryData("project");
@@ -54,8 +55,9 @@ export default function Home() {
           content="Hi, My name is Ashraf Chowdury and I am a Front-End Developer. I like to build excellent Web applications using Javascript and React.js. Currently, I am focused on empowering myself by learning some new technologies that will help me to better myself in my future journey."
         />
       </Head>
+
       {/********* Header Section ************/}
-      <header className="header_animate w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto text-center mt-8 xl:mt-14 lg:mb-24">
+      <header className="header_animate w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1050px] xl:w-[1400px] mx-auto text-center mt-12 xl:mt-24 lg:mb-24">
         <p
           data-aos="fade-down"
           className=" text-sm sm:text-[16px] md:text-lg lg:text-xl uppercase font-bold mb-6 md:mb-7 lg:mb-10"
@@ -64,13 +66,13 @@ export default function Home() {
         </p>
         <h1
           data-aos="fade-down"
-          className="gradiant_text text-[34px] sm:text-[40px] md:text-5xl lg:text-[72px] xl:text-[90px] leading-[45px] xl:leading-[110px] font-bold mb-2 sm:mb-3 md:mb-5 lg:mb-4 xl:mb-1"
+          className="heading gradiant_text text-[38px] sm:text-[40px] md:text-6xl lg:text-[88px] xl:text-[98px] leading-[45px] xl:leading-[110px] font-bold mb-2 sm:mb-3 md:mb-5 lg:mb-4 xl:mb-1"
         >
           Ashraf Chowdury. <br />
         </h1>
         <h2
           data-aos="fade-down"
-          className="gradiant_text capitalize text-[32px] sm:text-[38px] md:text-[42px] lg:text-[68px] xl:text-[80px] leading-[45px] lg:leading-[88px] xl:leading-[110px] font-bold mb-3 md:mb-5"
+          className="heading gradiant_text capitalize text-[32px] sm:text-[38px] md:text-[50px] lg:text-[72px] xl:text-[88px] leading-[45px] md:leading-[68px] lg:leading-[88px] xl:leading-[110px] font-bold mb-3 md:mb-5"
         >
           I am a front-end developer.
         </h2>
@@ -88,10 +90,10 @@ export default function Home() {
 
         <a href="mailto:ashraf.chowdury@gmail.com" target="_blank">
           <div data-aos="fade-up">
-            <Button style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
-              <i className="fa-solid fa-code-fork lg:mr-1"></i> Do You Want To
-              Work With Me?
-            </Button>
+            <Buttons style="py-[10px] px-6 lg:py-3 lg:px-8 text-sm lg:text-lg text-semibold">
+              <BiMailSend className=" mr-1 text-lg md:text-2xl" />
+              Do You Want To Work With Me?
+            </Buttons>
           </div>
         </a>
 
@@ -111,11 +113,16 @@ export default function Home() {
       </article>
 
       {/**************************** Author Author Section **********************************/}
-      <Author author={author} />
+      <section className="mt-16 lg:mt-44">
+        <Author author={author} />
+      </section>
 
       {/********************************* Project  Section ********************************/}
-      <Heading title="My Coding Project ⚒️" style="mt-28 lg:mt-12" />
-      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center mb-20">
+      <Heading
+        title="My Coding Project ⚒️"
+        style=" mt-32 lg:mt-52 mb-20 lg:mb-28"
+      />
+      <section className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col items-center">
         {sortProject
           ?.filter((val) => val.project_id < 4)
           .map((value) => {
@@ -128,28 +135,27 @@ export default function Home() {
       </section>
 
       {/********************************* Language  Section ********************************/}
-      <Heading title="My Ecosystem ♋" />
+      <Heading title="My Ecosystem ♋" style=" mt-32 lg:mt-52 mb-20 lg:mb-28" />
       <section>
         <div className="w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1200px] mx-auto flex flex-wrap justify-center">
           <Language data={language} />
         </div>
         <a href="mailto:ashraf.chowdury@gmail.com" target="_blank">
-          <Button style=" text-sm md:text-[16px] py-[7px] px-8 md:py-[10px] md:px-10 block mx-auto mt-[40px] md:mt-[60px]">
-            Contact Me
-          </Button>
+          <Buttons style=" text-sm md:text-[16px] py-[7px] px-8 md:py-[11px] md:px-10 block mx-auto mt-[40px] md:mt-[80px]">
+            <BiMailSend className=" lg:mr-1 text-lg md:text-2xl" /> Contact Me
+          </Buttons>
         </a>
       </section>
 
-      {/********************************* A Linke between Exprerinace and Language ********************************/}
-      <div className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] h-[3px] md:h-[4px] mx-auto my-16 md:my-20 lg:my-28 bg-light dark:bg-[#253345]">
-        {" "}
-      </div>
-
       {/********************************* Experiance Section ********************************/}
+      <Heading title="Experience 🏹" style=" mt-32 lg:mt-52 mb-20 lg:mb-28" />
       <Experiance data={experiance} />
 
-      <Heading title=" My Latest Article 🛰️" />
-      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto mb-40 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
+      <Heading
+        title=" My Latest Article 🛰️"
+        style=" mt-32 lg:mt-52 mb-20 lg:mb-28"
+      />
+      <article className=" w-[90%] md-[700px] lg:w-[1020px] xl:w-[1250px] mx-auto flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-baseline">
         {blog?.map((value) => {
           return (
             <React.Fragment key={value._id}>
@@ -159,7 +165,7 @@ export default function Home() {
         })}
       </article>
 
-      <Heading title="Contact Me 📧" />
+      <Heading title="Contact Me 📧" style=" mt-32 lg:mt-52 mb-20 lg:mb-28" />
       <Message />
     </>
   );

@@ -42,16 +42,15 @@ export default {
       },
     },
     {
-      name: "description_1",
-      title: "Description_1",
+      name: "description",
+      title: "Description",
       type: "string",
     },
     {
-      name: "description_2",
-      title: "Description_2",
-      type: "string",
+      name: "body",
+      title: "Body",
+      type: "blockContent",
     },
-
     {
       name: "github_link",
       title: "Github_link",

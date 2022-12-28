@@ -1,14 +1,15 @@
 import React from "react";
-import Button from "../utils/components/Button";
+import Buttons from "../utils/components/Buttons";
 import { urlFor } from "../sanity";
 import { Toaster, toast } from "react-hot-toast";
+import { BiFile, BiGitPullRequest } from "react-icons/bi";
 
 const Bio = ({ author }) => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <section
-        className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto mt-16 lg:mt-44 mb-10 lg:mb-44 flex flex-col lg:flex-row lg:justify-center items-center lg:items-center"
+        className=" w-[90%] sm:w-[480px] md:w-[700px] lg:w-[1000px] xl:w-[1400px] mx-auto flex flex-col lg:flex-row lg:justify-center items-center lg:items-center"
         data-aos="zoom-in-up"
       >
         {author?.map((value) => {
@@ -18,7 +19,7 @@ const Bio = ({ author }) => {
                 src={urlFor(value.mainImage).url()}
                 alt="Ashraf Chowdury"
                 title="Ashraf Chowdury"
-                className="shadow-lg w-[90%] sm:w-[80%] md:w-[75%] lg:w-[350px] xl:w-[420px] md:h-[420px] xl:h-[480px] object-cover rounded"
+                className="shadow-lg w-[90%] sm:w-[80%] md:w-[75%] lg:w-[350px] xl:w-[420px] md:h-[420px] xl:h-[480px] object-cover rounded-lg"
                 loading="lazy"
               />
               <div className=" w-[100%] sm:w-[90%] md:w-[75%] lg:w-[520px] xl:w-[620px] text-center md:text-start lg:ml-7 xl:ml-9">
@@ -46,7 +47,7 @@ const Bio = ({ author }) => {
                   })}
                 </div>
                 <div className=" flex flex-col mt-6">
-                  <Button style=" w-full py-[10px] text-sm lg:text-[16px] font-semibold">
+                  <Buttons style=" w-full py-[5px] lg:py-[6px] text-sm lg:text-[16px] font-semibold">
                     <a
                       href={value.resume}
                       onClick={() =>
@@ -54,20 +55,21 @@ const Bio = ({ author }) => {
                         toast.error("Resume is not ready right now")
                       }
                       target="_blank"
-                      className=" w-[100%] py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500"
+                      className=" py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500 flex items-center"
                     >
-                      <i className="fa-regular fa-file mr-1"></i> Get Resume
+                      <BiFile className=" mr-1 text-lg md:text-xl" />
+                      Get Resume
                     </a>{" "}
                     /{" "}
                     <a
                       href={value.github_link}
                       target="_blank"
-                      className=" w-[100%] py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500"
+                      className=" py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500 flex items-center"
                     >
-                      <i className="fa-solid fa-code-compare mr-2"></i>
+                      <BiGitPullRequest className=" mr-1 text-lg md:text-xl" />
                       View My Repo
                     </a>
-                  </Button>
+                  </Buttons>
                 </div>
               </div>
             </React.Fragment>

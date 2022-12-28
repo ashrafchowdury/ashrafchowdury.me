@@ -15,8 +15,9 @@ const about = () => {
       <Head>
         <title> About Ashraf Chowdury </title>
       </Head>
-      <Heading title="About Me 🧑" style=" lg:!mt-16" />
+      <Heading title="About Me 🧑" style=" mt-20 md:mt-28 mb-20 lg:mb-28" />
       <Author author={author} />
+      <Heading title="Experience 🏹" style=" mt-32 lg:mt-52 mb-20 lg:mb-28" />
       <Experiance data={experiance} />
     </>
   );
