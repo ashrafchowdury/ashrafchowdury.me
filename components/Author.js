@@ -55,7 +55,7 @@ const Bio = ({ author }) => {
                         toast.error("Resume is not ready right now")
                       }
                       target="_blank"
-                      className=" py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500 flex items-center"
+                      className=" py-[10px] px-2 hover:text-slate-700 dark:hover:text-gray-700 duration-500 flex items-center"
                     >
                       <BiFile className=" mr-1 text-lg md:text-xl" />
                       Get Resume
@@ -64,7 +64,7 @@ const Bio = ({ author }) => {
                     <a
                       href={value.github_link}
                       target="_blank"
-                      className=" py-[10px] px-2 hover:text-light dark:hover:text-gray-700 duration-500 flex items-center"
+                      className=" py-[10px] px-2 hover:text-slate-700 dark:hover:text-gray-700 duration-500 flex items-center"
                     >
                       <BiGitPullRequest className=" mr-1 text-lg md:text-xl" />
                       View My Repo
