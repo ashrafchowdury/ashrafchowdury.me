@@ -1,38 +1,38 @@
 import Head from "next/head";
-import Author from "../components/Author";
-import Heading from "../utils/components/Heading";
-import Experiance from "../components/Experiance";
 import { dehydrate, QueryClient } from "react-query";
-import { authorQuery, experianceQuery } from "../utils/components/querys";
+import { aboutQuery } from "../utils/helpers/querys";
 import { fetchQuery } from "../utils/functions/fetchQuery";
-import { useQueryData } from "../utils/hooks/useQueryData";
+import { useData } from "../context/DataContext";
+import ContentStructure from "../components/ContentStructure";
 
-const about = () => {
-  const { data: author } = useQueryData("author");
-  const { data: experiance } = useQueryData("experiance");
+const About = () => {
+  const { about } = useData();
+
   return (
     <>
       <Head>
         <title> About Ashraf Chowdury </title>
       </Head>
-      <Heading title="About Me 🧑" style=" mt-20 md:mt-28 mb-20 lg:mb-28" />
-      <Author author={author} />
-      <Heading title="Experience 🏹" style=" mt-32 lg:mt-52 mb-20 lg:mb-28" />
-      <Experiance data={experiance} />
+      <div className=" w-[90%] sm:w-[90%] lg:w-[50%] mt-12 md:mt-16 mb-20 md:mb-24 lg:mb-32">
+        <h1 className=" bg-darkHeading dark:bg-lightHeading text-transparent bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase">
+          About Myself
+        </h1>
+        <p className=" lg:text-xl md:text-lg sm:text-[16px] text-sm mt-4 md:mt-6 font-light">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
+          eum molestiae nisi autem, dolorum doloribus.
+        </p>
+      </div>
+
+      <ContentStructure content={about[0].about} />
     </>
   );
 };
 
-export default about;
+export default About;
 
-//get the author data with server side rendering
 export async function getServerSideProps() {
-  //setup the Query Client to fetch the data in sercer side
   const queryClient = new QueryClient();
-  //Requests for fetching author data for Sanity
-  await fetchQuery(queryClient, "author", authorQuery);
-  //Requests for fetching project data for Sanity
-  await fetchQuery(queryClient, "experiance", experianceQuery);
+  await fetchQuery(queryClient, "about", aboutQuery);
   return {
     props: {
       dehydratedState: dehydrate(queryClient),

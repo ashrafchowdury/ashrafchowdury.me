@@ -9,8 +9,8 @@ export default {
       type: "string",
     },
     {
-      name: "tooltip",
-      title: "Tooltip",
+      name: "filed",
+      title: "Filed",
       type: "string",
     },
     {

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "ashrafchowdury.me",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
     "@vercel/analytics": "^0.1.6",
-    "aos": "^2.3.4",
     "next": "12.3.0",
     "next-sanity": "^0.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-query": "^3.39.2"
   },

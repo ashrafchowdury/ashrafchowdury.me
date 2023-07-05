@@ -14,11 +14,17 @@ module.exports = {
         xl: "1450px",
       },
       colors: {
-        primary: "#3794E3",
-        hLight: "#E0E0E0",
-        dark: "#1B2430",
+        primary: "#9215f1",
+        hLight: "#B5B5B563",
+        dark: "#0B0B22",
         light: "#FFFFFF",
-        hDark: "#253345",
+        hDark: "#ffffff2e",
+      },
+      backgroundImage: {
+        lightHeading:
+          "radial-gradient(123.44% 123.44% at 56.63% 100%, #ececee 6.77%, rgba(255, 255, 255, 0.45) 100%)",
+        darkHeading:
+          "radial-gradient(123.44% 123.44% at 56.63% 100%, #0B0B22 6.77%, #0B0B22 30%)",
       },
     },
   },

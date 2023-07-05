@@ -8,9 +8,9 @@ import project from "./project";
 import category from "./category";
 import language from "./language";
 import blog from "./blog";
-import author from "./author";
 import blockContent from "./blockContent";
-import experiance from "./experiance";
+import about from "./about";
+import contact from "./contact";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,8 +24,8 @@ export default createSchema({
     category,
     language,
     blog,
-    author,
     blockContent,
-    experiance,
+    about,
+    contact,
   ]),
 });
