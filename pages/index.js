@@ -46,12 +46,16 @@ export default function Home() {
             development by building things and contributing to open-source.
           </p>
 
-          <div className="flex items-center justify-center lg:justify-start space-x-0 sm:space-x-2 md:space-x-4 mt-8 sm:mt-12 lg:mt-16 mb-16 sm:mb-20 lg:mb-28">
+          <div className="flex items-center justify-center lg:justify-start space-x-2 md:space-x-4 mt-8 sm:mt-12 lg:mt-16 mb-16 sm:mb-20 lg:mb-28">
             <Buttons style=" !bg-primary py-2 sm:!py-3 px-4 sm:!px-5 !text-light">
               <BiFile className="mr-1 sm:mr-2 text-[16px] " />
               Get Resume
             </Buttons>
-            <Buttons style=" !bg-transparent border border-hLight dark:border-hDark py-2 sm:!py-3 px-5 sm:!px-6">
+
+            <Buttons
+              link="/contact"
+              style=" !bg-transparent border border-hLight dark:border-hDark py-2 sm:!py-3 px-5 sm:!px-6"
+            >
               Contact Me
             </Buttons>
           </div>

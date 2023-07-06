@@ -18,8 +18,9 @@ const About = () => {
           About Myself
         </h1>
         <p className=" lg:text-xl md:text-lg sm:text-[16px] text-sm mt-4 md:mt-6 font-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-          eum molestiae nisi autem, dolorum doloribus.
+          The information below gives you specifics about my background and what
+          I do. If there is anything else that you would like to know, please
+          contact me.
         </p>
       </div>
 

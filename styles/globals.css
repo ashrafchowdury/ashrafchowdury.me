@@ -42,6 +42,9 @@
   .current_stack span {
     @apply text-[10px] lg:text-xs font-medium py-[2px] md:py-[5px] px-[6px] md:px-2 lg:px-3 rounded-md bg-hLight dark:bg-hDark m-[2px] md:m-1;
   }
+  .mobileMenu a{
+    @apply text-sm ml-3 px-3 py-2 rounded-lg hover:bg-hLight dark:hover:bg-hDark duration-200
+  }
 }
 
 @layer base {

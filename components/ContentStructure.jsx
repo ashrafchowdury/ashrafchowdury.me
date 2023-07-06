@@ -39,6 +39,9 @@ export const customizedComponents = {
         {children}
       </h2>
     ),
+    h3: ({ children }) => (
+      <h3 id={`${children}`.toLocaleLowerCase()}>{children}</h3>
+    ),
   },
 };
 
@@ -46,6 +49,11 @@ const tableOfContentComponents = {
   block: {
     h2: ({ children }) => (
       <a href={`#${children}`.toLocaleLowerCase()}>{children}</a>
+    ),
+    h3: ({ children }) => (
+      <a href={`#${children}`.toLocaleLowerCase()} className=" ml-5">
+        {children}
+      </a>
     ),
   },
 };

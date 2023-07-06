@@ -12,29 +12,42 @@ const Footer = () => {
         <Logo />
 
         <div className="flex items-center justify-center space-x-2 md:space-x-3">
-          <Link href="https://twitter.com/ashraf_chowdury" target="_blank">
+          <a
+            href="https://twitter.com/ashraf_chowdury"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Buttons style="!p-2">
               <FaTwitter />
             </Buttons>
-          </Link>
-          <Link href="https://github.com/ashrafchowdury" target="_blank">
+          </a>
+          <a
+            href="https://github.com/ashrafchowdury"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Buttons style="!p-2">
               <FaGithub />
             </Buttons>
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.linkedin.com/in/ashrafchowdury/"
             target="_blank"
+            rel="noreferrer"
           >
             <Buttons style="!p-2">
               <FaLinkedin />
             </Buttons>
-          </Link>
-          <Link href="https://github.com/ashrafchowdury" target="_blank">
+          </a>
+          <a
+            href="https://github.com/ashrafchowdury"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Buttons style="!p-2">
               <FaRegFileAlt />
             </Buttons>
-          </Link>
+          </a>
         </div>
       </footer>
     </>

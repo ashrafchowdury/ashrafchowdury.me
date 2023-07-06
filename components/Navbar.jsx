@@ -24,11 +24,15 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-2 md:space-x-3 lg:space-x-3 mr-[6px]">
-        <Link href="" className=" ">
+        <a
+          href="https://github.com/ashrafchowdury"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Buttons style="hidden sm:block !p-2 text-sm md:text-sm lg:text-xl">
             <BsGithub />
           </Buttons>
-        </Link>
+        </a>
 
         <Buttons
           style=" !p-2 text-sm md:text-sm lg:text-xl"

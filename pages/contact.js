@@ -18,8 +18,8 @@ const Contact = () => {
           Contact Me
         </h1>
         <p className=" lg:text-xl md:text-lg sm:text-[16px] text-sm mt-4 md:mt-6 font-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-          eum molestiae nisi autem, dolorum doloribus.
+          You can contact me through my email address or by using the social
+          media which I have added below
         </p>
       </div>
 
