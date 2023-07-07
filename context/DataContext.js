@@ -8,12 +8,12 @@ export const useData = () => useContext(DataContext);
 const DataProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [languages, setLanguages] = useState([]);
-  //
+  // get contents
   const { data: project } = useQuery("project", { staleTime: 500000 });
   const { data: blog } = useQuery("blog", { staleTime: 500000 });
   const { data: language } = useQuery("language", { staleTime: 500000 });
   const { data: about } = useQuery("about", { staleTime: 500000 });
-    const { data: contact } = useQuery("contact", { staleTime: 500000 });
+  const { data: contact } = useQuery("contact", { staleTime: 500000 });
   const router = useRouter();
 
   const shortProjects = () => {

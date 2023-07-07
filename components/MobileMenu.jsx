@@ -24,25 +24,25 @@ const MobileMenu = () => {
         </button>
       </div>
 
-      <div className="mobileMenu w-[80%] mx-auto flex flex-col space-y-5 mt-10 dark:text-light">
-        <Link onClick={() => setMenu(false)} href="/">
-          Home
+      <div className="mobileMenu w-[80%] mx-auto flex flex-col space-y-6 mt-10 dark:text-light">
+        <Link href="/">
+          <span onClick={() => setMenu(false)}>Home</span>
         </Link>
-        <Link onClick={() => setMenu(false)} href="/works">
-          Works
+        <Link href="/works">
+          <span onClick={() => setMenu(false)}>Works</span>
         </Link>
-        <Link
-          onClick={() => setMenu(false)}
+        <a
           href="https://ashrafchowdury09.hashnode.dev/"
           target="_blank"
+          rel="noreferrer"
         >
-          Blogs
+          <span>Articles</span>
+        </a>
+        <Link href="/about">
+          <span onClick={() => setMenu(false)}>About Me</span>
         </Link>
-        <Link onClick={() => setMenu(false)} href="/about">
-          About Me
-        </Link>
-        <Link onClick={() => setMenu(false)} href="/contact">
-          Contact Me
+        <Link href="/contact">
+          <span onClick={() => setMenu(false)}>Contact Me</span>
         </Link>
       </div>
     </section>

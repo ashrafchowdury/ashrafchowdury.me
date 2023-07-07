@@ -60,7 +60,7 @@ const tableOfContentComponents = {
 
 const ContentStructure = ({ content }) => {
   return (
-    <article className=" flex items-start justify-between ">
+    <article className=" flex items-start justify-between relative">
       <section className=" relative w-full lg:w-[720px] xl:w-[900px] ">
         <div className=" w-[2px] absolute top-1 bottom-3 bg-hLight dark:bg-hDark"></div>
 
@@ -74,7 +74,7 @@ const ContentStructure = ({ content }) => {
         </div>
       </section>
 
-      <div className="lg:w-[230px] xl:w-[280px] ml-10 sticky top-0 right-0 bg-hLight dark:bg-hDark pb-1 rounded-lg lg:block hidden">
+      <div className="lg:w-[230px] xl:w-[280px] ml-10 sticky top-64 right-0 bg-hLight dark:bg-hDark pb-1 rounded-lg lg:block hidden">
         <div className="!text-sm font-semibold py-3 px-5 bg-hLight dark:bg-hDark w-full !rounded-t-lg !mx-0 !mt-0 !mb-3">
           Table of Contents
         </div>
@@ -90,5 +90,37 @@ const ContentStructure = ({ content }) => {
     </article>
   );
 };
+
+// const ContentStructure = ({ content }) => {
+//   return (
+//     <article className=" relative flex lg:flex-row flex-col-reverse items-start justify-between mb-24">
+//       <div className=" w-full lg:w-[720px] xl:w-[900px] ">
+//         <div className=" w-[2px] absolute top-1 bottom-3 bg-hLight dark:bg-hDark"></div>
+
+//         <div className="detaile ml-6 sm:ml-10 lg:ml-[55px] xl:ml-16">
+//           <PortableText
+//             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+//             dataset={process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET}
+//             value={content}
+//             components={customizedComponents}
+//           />
+//         </div>
+//       </div>
+
+
+
+//       <div className=" lg:w-[280px] sticky lg:top-[80px] right-0 bg-glass border-2  pb-2 rounded-lg lg:block hidden">
+//         <p className="text-sm font-semibold my-4 mx-5 flex items-center justify-between group/item ">
+//           Table of Contents{" "}
+//           <span className=" invisible group-hover/item:visible">^.^</span>
+//         </p>
+
+//         <div className="table_content flex flex-col space-y-1">
+        
+//         </div>
+//       </div>
+//     </article>
+//   );
+// };
 
 export default ContentStructure;

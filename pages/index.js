@@ -23,7 +23,7 @@ export default function Home() {
   const { projects } = useData();
 
   return (
-    <>
+    <main className=" overflow-hidden">
       <Head>
         <title>Ashraf Chowdury | Front-End Developer</title>
         <meta
@@ -155,7 +155,7 @@ export default function Home() {
 
         <Blog />
       </article>
-    </>
+    </main>
   );
 }
 
