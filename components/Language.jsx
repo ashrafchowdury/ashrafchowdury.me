@@ -6,11 +6,11 @@ const Language = () => {
     <>
       <Tech
         title="Frontend"
-        about="I try to use the best frontend tachnoligies to make my like easier."
+        about="I try to use the best frontend technologies to make my life easier."
       />
       <Tech
         title="Backend"
-        about="I'm not an expert in Backend, but I know use these techs."
+        about="I'm not an expert in Backend, but I know how to use these techs."
       />
       <Tech
         title="Tools"
