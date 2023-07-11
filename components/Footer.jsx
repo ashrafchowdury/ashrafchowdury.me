@@ -39,11 +39,7 @@ const Footer = () => {
               <FaLinkedin />
             </Buttons>
           </a>
-          <a
-            href="https://github.com/ashrafchowdury"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="resume_ashrafchowdury.pdf" download={true}>
             <Buttons style="!p-2">
               <FaRegFileAlt />
             </Buttons>

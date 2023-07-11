@@ -45,11 +45,12 @@ const Navbar = () => {
           <BsListNested className="md:text-sm" />
         </Buttons>
         <div className=" bg-hLight dark:bg-hDark w-[2px] h-7 mx-2"></div>
-
-        <Buttons style=" md:!py-[10px] md:!px-5 !px-3 lg:!py-3 lg:!px-6 whitespace-nowrap">
-          <BiFile className="mr-1 sm:mr-2 text-sm md:text-[16px]" />
-          Get Resume
-        </Buttons>
+        <a href="resume_ashrafchowdury.pdf" download={true}>
+          <Buttons style=" md:!py-[10px] md:!px-5 !px-3 lg:!py-3 lg:!px-6 whitespace-nowrap">
+            <BiFile className="mr-1 sm:mr-2 text-sm md:text-[16px]" />
+            Get Resume
+          </Buttons>
+        </a>
       </div>
 
       <MobileMenu />

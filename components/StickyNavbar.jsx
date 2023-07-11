@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Buttons from "./ui/Buttons";
 
-
 const StickyNavbar = () => {
   const [showIndicator, setShowIndicator] = useState(false);
 
@@ -31,9 +30,11 @@ const StickyNavbar = () => {
       <Link href="/contact" target="_blank">
         Contact Me
       </Link>
-      <Buttons style=" !py-2 text-xs lg:!text-sm !text-xs">
-        Get Resume
-      </Buttons>
+      <a href="resume_ashrafchowdury.pdf" download={true}>
+        <Buttons style=" !py-2 text-xs lg:!text-sm !text-xs">
+          Get Resume
+        </Buttons>
+      </a>
     </nav>
   );
 };
