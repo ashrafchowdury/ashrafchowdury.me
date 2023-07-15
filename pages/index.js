@@ -32,8 +32,8 @@ export default function Home() {
         />
       </Head>
 
-      <header className=" flex flex-col-reverse lg:flex-row items-center justify-start lg:justify-between text-center lg:text-start mt-10 md:mt-24">
-        <section className=" xl:w-[800px] lg:w-[550px] -mt-8 sm:-mt-12 lg:mt-0">
+      <header className=" relative flex flex-col-reverse lg:flex-row items-center justify-start lg:justify-between text-center lg:text-start mt-10 md:mt-20">
+        <section className=" xl:w-[800px] lg:w-[550px] mt-4 sm:mt-6 lg:mt-0">
           <p className=" text-[16px] md:text-lg lg:text-2xl font-bold mb-2 md:mb-3 lg:mb-4">
             Creative
           </p>
@@ -53,7 +53,6 @@ export default function Home() {
                 Get Resume
               </Buttons>
             </a>
-
             <Buttons
               link="/contact"
               style=" !bg-transparent border border-hLight dark:border-hDark py-2 sm:!py-3 px-5 sm:!px-6"
@@ -80,10 +79,11 @@ export default function Home() {
             />
           </div>
         </section>
+
         <img
-          src="./auther.svg"
+          src="./ashraf_chowdury_hero.png"
           alt="ashraf chowdury"
-          className=" xl:w-[600px] lg:w-[500px] md:w-[580px] sm:w-[480px] w-full -mt-16 sm:-mt-20 md:-mt-28 lg:-mt-20 lg:-mr-5 lg:scale-110"
+          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12  w-full rounded-xl"
         />
       </header>
 
