@@ -83,7 +83,7 @@ export default function Home() {
         <img
           src="./ashraf_chowdury_hero.png"
           alt="ashraf chowdury"
-          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12  w-full rounded-xl"
+          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12  w-full rounded-xl hover:scale-105 duration-200"
         />
       </header>
 

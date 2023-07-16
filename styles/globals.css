@@ -27,7 +27,14 @@
 
 @layer base {
   * {
-    @apply font-["Lexend_Deca"] scroll-smooth text-dark dark:text-light;
+    @apply font-["Lexend_Deca"] scroll-smooth text-dark dark:text-light cursor-none;
+  }
+
+  a,
+  button,
+  svg,
+  path {
+    @apply cursor-pointer;
   }
   body {
     @apply bg-light dark:bg-dark overflow-x-hidden;
@@ -42,8 +49,14 @@
   .current_stack span {
     @apply text-[10px] lg:text-xs font-medium py-[2px] md:py-[5px] px-[6px] md:px-2 lg:px-3 rounded-md bg-hLight dark:bg-hDark m-[2px] md:m-1;
   }
-  .mobileMenu span{
-    @apply text-sm ml-3 px-3 py-2 rounded-lg hover:bg-hLight dark:hover:bg-hDark duration-200
+  .mobileMenu span {
+    @apply text-sm ml-3 px-3 py-2 rounded-lg hover:bg-hLight dark:hover:bg-hDark duration-200;
+  }
+  .cursor {
+    @apply fixed left-0 top-0 z-50 h-6 w-6 rounded-full bg-gradient-to-r from-primary to-[#EB4AD2];
+  }
+  .cursor__follower {
+    @apply w-3 h-3 duration-300 border;
   }
 }
 
