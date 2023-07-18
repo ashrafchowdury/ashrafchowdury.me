@@ -33,10 +33,17 @@ export default function Home() {
       </Head>
 
       <header className=" relative flex flex-col-reverse lg:flex-row items-center justify-start lg:justify-between text-center lg:text-start mt-10 md:mt-20">
-        <section className=" xl:w-[800px] lg:w-[550px] mt-4 sm:mt-6 lg:mt-0">
-          <p className=" text-[16px] md:text-lg lg:text-2xl font-bold mb-2 md:mb-3 lg:mb-4">
-            Creative
-          </p>
+        <section className=" xl:w-[800px] lg:w-[550px] mt-7 sm:mt-12 lg:mt-0 flex flex-col lg:items-start items-center">
+          <div className=" w-auto border border-hLight dark:border-hDark rounded-full pl-3 pr-5 py-2 flex items-center space-x-2 mb-4">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-primary opacity-90"></span>
+            </span>
+            <p className="heading md:text-sm text-xs font-semibold uppercase">
+              Open To Work
+            </p>
+          </div>
+
           <h1 className=" capitalize text-3xl sm:text-[40px] md:text-5xl xl:text-6xl leading-[45px] sm:leading-[55px] md:leading-[65px] lg:leading-[68px] xl:leading-[80px] font-bold mb-2 sm:mb-3 md:mb-5 lg:mb-4 xl:mb-1">
             Journey of a <span className="heading ">Front-End</span> Developer,
           </h1>
@@ -83,7 +90,7 @@ export default function Home() {
         <img
           src="./ashraf_chowdury_hero.png"
           alt="ashraf chowdury"
-          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12  w-full rounded-xl hover:scale-105 duration-200"
+          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12 w-full rounded-xl hover:scale-105 duration-200"
         />
       </header>
 

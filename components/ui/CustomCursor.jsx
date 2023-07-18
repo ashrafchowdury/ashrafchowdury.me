@@ -25,9 +25,7 @@ const CustomCursor = () => {
       <div
         className="fixed left-0 top-0 z-50 rounded-full w-32 h-32 bg-primary dark:bg-white blur-[180px]"
         style={{
-          transform: `translate3d(${position.x}px, ${
-            position.y 
-          }px, 0)`,
+          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
         }}
       ></div>
       <div
