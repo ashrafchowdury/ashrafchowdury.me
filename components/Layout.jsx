@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       />
       <div className="bgDark hidden dark:block fixed -z-40 top-0 left-0 right-0 bottom-0"></div>
       <div className="bgLight block dark:hidden fixed -z-40 top-0 left-0 right-0 bottom-0"></div>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <main className="xl:w-[1350px] lg:w-[1020px] md:w-[750px] sm:w-[550px] w-[95%] mx-auto relative">
         <Email />
         <ThemeDataProvider>
