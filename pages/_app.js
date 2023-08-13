@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider, Hydrate } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 //initilize the Query
 import Layout from "../components/Layout";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }) {

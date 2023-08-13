@@ -8,6 +8,9 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ["cdn.sanity.io"],
+  },
 };
 
 module.exports = nextConfig;

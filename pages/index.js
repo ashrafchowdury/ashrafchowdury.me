@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Blog from "../components/Blog";
 import Projects from "../components/Projects";
 import Language from "../components/Language";
@@ -86,12 +87,17 @@ export default function Home() {
             />
           </div>
         </section>
-
-        <img
-          src="./ashraf_chowdury_hero.png"
-          alt="ashraf chowdury"
-          className=" xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12 w-full rounded-xl hover:scale-105 duration-200"
-        />
+        <div className="xl:w-[580px] lg:w-[500px] md:w-[550px] sm:w-[450px] w-full relative -mt-4 sm:-mt-5 md:-mt-8 lg:-mt-12">
+          <div className=" absolute -z-10 top-0 left-12 right-14 bottom-5 animate-pulse bg-hLight dark:bg-hDark rounded-lg"></div>
+          <Image
+            src="/ashraf_chowdury_hero.png"
+            alt="ashraf chowdury"
+            width={570}
+            height={510}
+            className=" w-full rounded-xl"
+            loading="lazy"
+          />
+        </div>
       </header>
 
       <HorizontalRule />

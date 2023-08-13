@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Buttons from "./ui/Buttons";
 import { urlFor } from "../sanity";
 import { BiGitPullRequest, BiLinkExternal } from "react-icons/bi";
@@ -12,14 +13,19 @@ const Projects = ({ data }) => {
         }`}
       >
         <Link href={`/works/${data.slug.current}`}>
-          <div className=" border border-hLight dark:border-hDark rounded-xl p-2 overflow-hidden">
-            <img
-              src={urlFor(data.mainImage).url()}
-              alt={data.title}
-              title={`This ${data.title} Bulding By Ashraf Chowdury`}
-              loading="lazy"
-              className=" w-[100%] lg:w-[400px] xl:w-[420px] h-[220px] sm:h-[300px] md:h-[310px] lg:h-[280px] xl:h-[300px] object-cover rounded-lg cursor-pointer hover:scale-105 duration-300"
-            />
+          <div className=" border border-hLight dark:border-hDark rounded-xl p-2 pb-[2px] overflow-hidden">
+            <div className=" relative w-full lg:w-[400px] xl:w-[420px] lg:h-[280px] xl:h-[300px] rounded-lg overflow-hidden">
+              <div className=" absolute -z-10 top-2 left-2 right-2 bottom-[10px] animate-pulse bg-hLight dark:bg-hDark rounded-lg"></div>
+              <Image
+                src={urlFor(data.mainImage).url()}
+                alt={data.title}
+                title={`This ${data.title} Bulding By Ashraf Chowdury`}
+                loading="lazy"
+                width={580}
+                height={400}
+                className=" w-full object-cover rounded-lg cursor-pointer hover:scale-105 duration-300"
+              />
+            </div>
           </div>
         </Link>
 
