@@ -18,7 +18,11 @@ export default function Document() {
         />
 
         {/**************** Favion **********/}
-        <link rel="shortcut icon" href="/ashraf_chowdury.png" type="image/x-icon" />
+        <link
+          rel="shortcut icon"
+          href="/ashraf_chowdury.png"
+          type="image/x-icon"
+        />
         <title>Ashraf Chowdury</title>
         <meta
           name="description"
@@ -40,6 +44,10 @@ export default function Document() {
         <meta
           name="google-site-verification"
           content="SkzTyqV-NOmWDfjN3HNuF2i1b9yWH3u0LtxOZpKmYc0"
+        />
+        <meta
+          name="google-site-verification"
+          content="qIRqnZh7phNjBN_uR00S3q6DujT06Ur1AzClHxYMhfQ"
         />
       </Head>
       <body>
